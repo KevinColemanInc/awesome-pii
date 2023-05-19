@@ -1,0 +1,2461 @@
+## Phone
+### USA + some international formats
+[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}
+
+## Email
+^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$           # 
+[\w-\.]+\[at\]([\w-]+\.)+[\w-]{2,4}        # test[at]gmail.com
+[\w-\.]+\@([\w-]+\.?)+[\w-]{2,4}           # test@gmail
+[\w-\.]+\[at\]([\w-]+\[dot\]?)+[\w-]{2,4}  # test[at]gmail[dot]com
+[\w-\.]+\[at\]([\w-]+\[dot\]?)+[\w-]{2,4}  # test[at]gmail[dot]com
+(?:mailto:)?(?P<email>[A-z0-9_.+-]+@[A-z0-9_.-]+\.[A-z]+)
+
+## Socials
+### Instagram
+(?:(?:http|https):\/\/)?(?:www.)?(?:instagram.com|instagr.am|instagr.com)\/(\w+)        # url
+(?:https?:)?\/\/(?:www\.)?(?:instagram\.com|instagr\.am)\/(?P<username>[A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)
+i\s?g\s?:?\s??\@\w+                                                                     # ig @example
+instagram:?\s??\@\w+                                                                    # instagram: @example
+
+### TikTok
+~https?://(?:www\.)?tiktok\.com/\S*/video/(\d+)|https?://(?:www\.)?vm.tiktok.com/\S*/~  # url
+tiktok:? ?\@\w+                                                                         # tiktok: @example
+t\s?t\s?:\s??\s??\@\w+                                                                  # tt @example
+
+### Snapchat
+(?:https?:)?\/\/(?:www\.)?snapchat\.com\/add\/(?P<username>[A-z0-9\.\_\-]+)\/?
+s\s?c\s?:\s??\s??\@\w+                      # sc @example
+snapchat:?\s??\@\w+                                                                    # instagram: @example
+
+### LinkedIn
+(?:https?:)?\/\/(?:[\w]+\.)?linkedin\.com\/in\/(?P<permalink>[\w\-\_À-ÿ%]+)\/?
+
+### WhatsApp
+### Telegram
+(?:https?:)?\/\/(?:t(?:elegram)?\.me|telegram\.org)\/(?P<username>[a-z0-9\_]{5,32})\/? # t.me, telegram.me and telegram.org.
+
+### Twitter
+(?:https?:)?\/\/(?:[A-z]+\.)?twitter\.com\/@?(?P<username>[A-z0-9_]+)\/status\/(?P<tweet_id>[0-9]+)\/?
+
+### Facebook
+(?:https?:)?\/\/(?:www\.)?(?:facebook|fb)\.com\/(?P<profile>(?![A-z]+\.php)(?!marketplace|gaming|watch|me|messages|help|search|groups)[A-z0-9_\-\.]+)\/?
+
+## Mailing Address
+
+## ID card
+### Social Security Number
+/^(?!666|000|9\d{2})\d{3}-(?!00)\d{2}-(?!0{4})\d{4}$/
+
+## Internet
+### IP Address
+((^\s*((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))\s*$)|(^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$)) # ipv4 and ipv6
+### MAC Address
+^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$
+
+### Domain Name
+\b((?=[a-z0-9-]{1,63}\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,63}\b # supports puny; May want to limit TLDs to reduce false positives
+
+## Personal
+### Date of Birth
+(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).([19]{2})?([1-9]{2}) # US date format MM.DD.YYYY
+
+### Race
+American Indian
+Alaska Native
+Asian
+Black American
+African American
+Black
+Native Hawaiian
+Pacific Islander White
+African
+Caribbean
+Indian
+Melanesian
+Australasian
+Aboriginal
+Chinese
+Guamanian
+Japanese
+Korean
+Polynesian
+European
+Anglo Saxon
+AngloSaxon
+Latin American
+Arabic
+Vietnamese
+Micronesian
+Declined to Respond
+Other Hispanic
+US Indian
+Canadian Indian
+Puerto Rican
+Filipino
+Mexican
+Alaskan Native
+Cuban
+
+### Religion
+Pre-sectarian Buddhism
+Mahayana
+Ari Buddhism
+Chinese Buddhism
+Tiantai
+Tendai
+Cheontae
+Huayan school
+Dashabhumika
+Daśabhūmikā
+Chan Buddhism
+Seon Buddhism
+Thiền Buddhism
+Trúc Lâm
+Japanese Zen
+Zen Buddhism
+Caodong school
+Sōtō
+Keizan
+Jakuen
+Kangan Giin
+Giin line
+Linji school
+Ōtōkan
+Otokan line
+Rinzai school
+Rinzai
+Ōbaku
+Fuke-shū
+Sanbo Kyodan
+Madhyamaka
+East Asian Mādhyamaka
+Sanlun
+Jonang
+Prasaṅgika
+Svatantrika
+Nichiren Buddhism
+Honmon Butsuryū-shū
+Kempon Hokke
+Nichiren Shōshū
+Nichiren Shū
+Pure Land Buddhism
+Jōdo Shinshū
+Jodo Shinshu Hongwanji-ha
+Honganji-ha
+Ōtani-ha
+Yuzu Nembutsu
+Seizan
+Jōdo-shū
+Yogacara
+Yogācāra
+East Asian Yogācāra
+Nikaya Buddhism
+Theravada
+Sangharaj Nikaya
+Mahasthabir Nikaya
+Dwara Nikaya
+Shwegyin Nikaya
+Thudhamma Nikaya
+Amarapura–Rāmañña Nikāya
+Sri Kalyani Yogasrama Samstha
+Galduwa Forest Tradition
+Siam Nikaya
+Sri Lankan Forest Tradition
+Dhammayuttika Nikaya
+Thai Forest Tradition
+Maha Nikaya
+Dhammakaya Movement
+Vipassana movement
+Vajrayana
+Azhaliism
+Mun (religion)
+Bongthingism
+Chinese Esoteric Buddhism
+Newar Buddhism
+Indonesian Esoteric Buddhism
+Shingon Buddhism
+Southern Esoteric Buddhism
+Tibetan Buddhism
+Bon
+Gelug
+Yellow shamanism
+Yellow Shamanism
+Kagyu
+Dagpo Kagyu
+Karma Kagyu
+Drukpa Kagyu
+Shangpa Kagyu
+Nyingma
+Sakya (Tibetan Buddhist school)
+Sakya
+Jonang
+Bodongpa
+Āstika and nāstika
+Āstika
+Nyaya
+Mīmāṃsā
+Mimamsa
+Samkhya
+Vaisheshika
+Vedanta
+Advaita Vedanta
+Akshar-Purushottam Darshan
+Bhedabheda
+Achintya Bheda Abheda
+Dvaitadvaita
+Dvaita Vedanta
+Pratyabhijna
+Shaiva Siddhanta
+Shiva Advaita
+Shuddhadvaita
+Vishishtadvaita
+Yoga (philosophy)
+Āstika and nāstika
+Nāstika
+Ājīvika
+Ajivika
+Ajñana
+Purana Kassapa
+Akiriya
+Buddhism
+Charvaka
+Jainism
+Pakudha Kaccayana
+Sassatavada
+Hindu denominations
+Sant Mat
+Dadu Dayal
+Dadupanth
+Kabir panth
+Ravidassia religion
+Sadh
+Shaivism
+Aghori
+Kapalika
+Kashmir Shaivism
+Kaumaram
+Nath
+Adinath Sampradaya
+Inchegeri Sampradaya
+Pashupata Shaivism
+Shaiva Siddhanta
+Veerashaivism
+Lingayatism
+Shaktism
+Shri Vidya
+Srikula
+Smartism
+Śrauta
+Tantra
+Kaula (Hinduism)
+Kaula
+Vaishnavism
+Balmikism
+Bhagavata
+Bhagavata tradition
+Brahma Sampradaya
+Madhva tradition
+Gaudiya Vaishnavism
+Manipuri Vaishnavism
+Haridasa
+Ekasarana Dharma
+Kapadi Sampradaya
+Mahanubhava
+Nimbarka Sampradaya
+Pranami
+Radha Vallabh Sampradaya
+Ramdwara
+Ramsnehi Sampradaya
+Rudra Sampradaya
+Pushtimarg
+Sri Vaishnavism
+Ramanandi Sampradaya
+Sri Vaishnavism
+Thenkalais
+Manavala Mamunigal
+Manavala Mamunigal Sabha
+Vaishnava-Sahajiya
+Warkari
+Zunbils
+Zunism
+Banjara
+Banjara Hinduism
+Baul
+Bhil
+Bhil Hinduism
+Hajong ethnic religion
+Dyaoism
+Hinduism in Indonesia
+Indonesian Hinduism
+Aluk Todolo
+Balinese Hinduism
+Hinduism in Java
+Javanese Hinduism
+Tenggerese people
+Tenggerese Hinduism
+Kaharingan
+Manusela people
+Naurus
+Nuaulu people
+Nuaulu religion
+Tolotang
+Digambara
+Kanji Panth
+Taran Panth
+Śvētāmbara
+Murtipujaka
+Sthānakavāsī
+Khalsa
+Nanakpanthi
+Nirankari
+Nirmala (sect)
+Nirmala
+Sanatan Sikh
+Udasi
+Ananda Yoga
+Bhakti yoga
+Hatha yoga
+Bihar School of Yoga
+Integral Yoga (Satchidananda)
+Integral Yoga
+Jivamukti Yoga
+Jnana yoga
+Karma yoga
+Kripalu Yoga
+Kriya Yoga school
+Kriya Yoga
+Kundalini yoga
+Raja yoga
+Sahaja Yoga
+Siddha Yoga
+Sivananda yoga
+Surat Shabd Yoga
+Tantric Yoga
+Ancestor veneration in China
+Ancestor Worship
+Benzhuism
+Chinese folk religion in Southeast Asia
+Faism
+Kam people
+Kam religion
+Maonan people
+Maonan traditional religion
+Mazu
+Mazu worship
+Mo (religion)
+Mo religion
+Northeast China folk religion
+Nuo folk religion
+Qiang folk religion
+Queen Mother of the West
+Queen Mother worship
+Shangdi
+Shangdiism
+Shen (Chinese religion)
+Shenism
+Sui people
+Sui religion
+Tay people
+Then
+Wang Ye worship
+Chinese shamanism
+Wuism
+Taoist philosophy
+Taojia
+Fajia
+School of Diplomacy
+Zonghengjia
+Huang–Lao
+Mohism
+Mojia
+School of Names
+Mingjia
+Agriculturalism
+Nongjia
+Ruism
+Ruijia
+Yangism
+School of Naturalists
+Yinyangjia
+Syncretism (Chinese philosophy)
+Zajia
+Confucian ritual religion
+Han learning
+Han Learning
+Korean Confucianism
+Donghak
+Lingnan Confucianism
+Neo-Confucianism
+Cheng–Zhu school
+Cheng-Zhu school
+Edo Neo-Confucianism
+Yangmingism
+New Confucianism
+Progressive Confucianism
+New Text Confucianism
+New Text
+Changzhou School of Thought
+Changzhou school
+Old Texts
+Old Text
+Shinto
+Izumo-taishakyo
+Koshintō
+Shinbutsu-shūgō
+Shinbutsu-shugo
+Konkōkyō
+Shugendō
+State Shinto
+Yoshida Shintō
+Matagi
+Matagi spirituality
+Ryukyuan religion
+Korean shamanism
+Korean shamanism
+Muism
+Gasin faith
+Korean Taoism
+Quanzhen School
+Shangqing School
+Taoism in Vietnam
+Vietnamese Taoism
+Way of the Five Pecks of Rice
+Way of the Celestial Masters
+Way of the Li Family
+Lijiadao
+Northern Celestial Masters
+Way of the Northern Celestial Masters
+Zhengyi Dao
+Way of the Taiping
+Syncretic Taoism
+Chongxuan School
+Dragon Gate Taoism
+Kōshin-shinkō
+Kōshin
+Lingbao School
+Wuliupai
+Xuanxue
+Yao Taoism
+Đạo Lương
+Đạo Mẫu
+Thánh Trần worship
+Nội Đạo Tràng
+Muong ethnic religion
+Ta Oi people
+Ta Oi animism
+Arianism
+Proto-Gnosticism
+Gnosticism
+Bogomilism
+Catharism
+Cerdonians
+Cerinthus
+Ecclesia Gnostica
+Johannite Church
+Paulicianism
+Sethianism
+Basilideans
+Valentinianism
+Bardaisan
+Bardesanite School
+Simonians
+Marcionism
+Nicene Creed
+Nicene Christianity
+Thomasines
+Thomasine Christianity
+Church of the East
+Ancient Church of the East
+Assyrian Church of the East
+Chaldean Syrian Church
+Eastern Catholic Churches
+Albanian Greek Catholic Church
+Belarusian Greek Catholic Church
+Bulgarian Greek Catholic Church
+Byzantine Catholic Church of Croatia and Serbia
+Chaldean Catholic Church
+Greek Byzantine Catholic Church
+Hungarian Byzantine Catholic Church
+Italo-Albanian Catholic Church
+Macedonian Greek Catholic Church
+Macedonian Catholic Church
+Maronite Church
+Melkite Greek Catholic Church
+Romanian Church United with Rome, Greek-Catholic
+Romanian Catholic Church
+Russian Greek Catholic Church
+Ruthenian Greek Catholic Church
+Slovak Greek Catholic Church
+Syriac Catholic Church
+Syro-Malankara Catholic Church
+Syro-Malabar Catholic Church
+Ukrainian Greek Catholic Church
+(Independent Eastern Catholic Churches)
+Ukrainian Orthodox Greek Catholic Church
+Eastern Orthodox Church
+Albanian Orthodox Church
+Bulgarian Orthodox Church
+Georgian Orthodox Church
+Greek Orthodox Church
+Hesychasm
+Hesychasmism
+Palamism
+Romanian Orthodox Church
+Russian Orthodox Church
+Belarusian Orthodox Church
+Serbian Orthodox Church
+Orthodox Church of Ukraine
+Ukrainian Orthodox Church
+(Noncanonical/Independent Eastern Orthodox Churches)
+Old Calendarists
+Old Believers
+Russian Old Believers
+Bezpopovtsy
+Popovtsy
+Oriental Orthodoxy
+Oriental Orthodox Churches
+Armenian Apostolic Church
+Coptic Orthodox Church
+Syriac Orthodox Church
+Malankara Jacobite Syrian Church
+Ethiopian Orthodox Church
+Eritrean Orthodox Church
+Malankara Orthodox Syrian Church
+Spiritual Christianity
+Doukhobor
+Khlyst
+Molokan
+Skoptsy
+Proto-Protestantism
+Brethren of the Free Spirit
+Hussites
+Unity of the Brethren (Czech Republic)
+Czech Brethren
+Moravian Church
+Moravians
+Lollardy
+Strigolniki
+Waldensians
+Protestantism
+Anabaptism
+Anabaptists
+Amish
+Hutterite
+Mennonite
+River Brethren
+Schwarzenau Brethren
+Shakers
+Anglicanism
+Anglo-Catholicism
+Anglican Papalism
+Broad church
+Continuing Anglican movement
+English Dissenters
+Evangelical Anglicanism
+Nonconformist (Protestantism)
+Nonconformists
+Puritans
+Fifth Monarchists
+Radical orthodoxy
+Baptists
+General Baptists
+Free Will Baptist
+Landmarkism
+Missionary Baptists
+Primitive Baptists
+Strict Baptists
+Reformed Baptists
+Black church
+Black theology
+Christian deism
+Confessing Movement
+Evangelicalism
+Charismatic Movement
+Charismatic movement
+Emerging church
+German Christians (movement)
+Neo-charismatic movement
+Neo-Evangelicalism
+New Apostolic Reformation
+Plymouth Brethren
+Exclusive Brethren
+Open Brethren
+Progressive Christianity
+Christian fundamentalism
+Protestant fundamentalism
+Jesuism
+Lutheranism
+Evangelical Catholic
+Laestadianism
+Neo-Lutheranism
+Pietism
+Methodism
+Calvinistic Methodists
+Holiness movement
+Church of the Nazarene
+The Salvation Army
+Wesleyanism
+Pentecostalism
+Church of God (Cleveland, Tennessee)
+Church of God
+Latter Rain (post–World War II movement)
+Latter Rain movement
+Oneness Pentecostalism
+Word of Faith
+Quakers
+Calvinism
+Reformed churches
+Amyraldism
+Arminianism
+Remonstrants
+Christian reconstructionism
+Congregational churches
+Continental Reformed churches
+Swiss Reformed
+Dutch Reformed Church
+Dutch Reformed
+Huguenot
+French Huguenot
+Neo-Calvinism
+New Calvinism
+Presbyterianism
+Zwinglianism
+Reformed Eastern Christianity
+Restoration Movement
+Restoration movement
+Adventism
+Seventh-day Adventist Church
+Christadelphians
+Churches of Christ
+Cooneyites
+Iglesia ni Cristo
+Bible Student movement
+Jehovah's Witnesses
+Free Bible Students
+Friends of Man
+Latter Day Saint movement
+The Church of Jesus Christ of Latter-day Saints
+Community of Christ
+Mormon fundamentalism
+Millerism
+Campbellite
+Stone-Campbell movement
+Two by Twos
+Swedenborgianism
+Unitarianism
+Roman Catholic Church
+Anglican Ordinariate
+Anglican Ordinariate Catholics
+Catholic Charismatic Renewal
+Charismatic Catholics
+Civil Constitution of the Clergy
+Gallicanism
+Hebrew Catholics
+Independent Catholic churches
+Old Catholic Church
+Polish National Catholic Church
+Liberal Catholicism
+Liberation theology
+Modernism (Roman Catholicism)
+Modernist Catholics
+Traditionalist Catholic
+Sedevacantism
+Palmarian Catholic Church
+Sedeprivationism
+Ultramontanism
+Aymara people
+Aymara spirituality
+Bagnolians
+Esoteric Christianity
+Martinism
+Theosophy (Boehmian)
+Christian Theosophy
+Christianity and neopaganism
+Christopaganism
+Christianity and neopaganism
+Christian Wicca
+God Worshipping Society
+Judaizers
+Christian Kabbalah
+Hebrew Roots
+Makuya
+Messianic Judaism
+Sacred Name Movement
+Subbotniks
+Yehowists
+Lisu Christianity
+Lisu
+Raramuri
+Raramuri religion
+Spiritual Baptist
+Xueta Christianity
+Xueta
+Yaqui people
+Yaqui religion
+American civil religion
+American Civil Religion
+Bosnian Church
+Christian Universalism
+Nondenominational Christianity
+Nontrinitarianism
+Tolstoyan movement
+Islamic schools and branches
+Ilm al-Kalam
+Ahl al-Hadith
+Azariqa
+Azraqi
+Haruriyyah
+Ibadi
+Najdat
+Sufri
+Shia Islam
+Alevism
+Alians
+Bektashi Order
+Bektashism
+Kurdish Alevism
+Alawites
+Isma'ilism
+Mustaali
+Dawoodi Bohra
+Alavi Bohra
+Atba-i-Malak
+Atba-i-Malak Badar
+Atba-i-Malak Vakil
+Hebtiahs Bohra
+Progressive Dawoodi Bohra
+Sulaymani
+Nizari
+Twelver
+Ja'fari jurisprudence
+Akhbari
+Shaykhism
+Usuli
+Zaidiyyah
+Jarudiyah
+Batriyya
+Sufism
+Bektashi Order
+Chishti Order
+Kubrawiya
+Ma Laichi
+Khufiyya
+Mevlevi Order
+Mouride
+Naqshbandi
+Jahriyya
+Ni'matullāhī
+Qadiriyya
+Roshani movement
+Roshani
+Shadhili
+Suhrawardiyya
+Sufi Order International
+Tijaniyyah
+Universal Sufism
+Sunni Islam
+Kalam
+Ash'ari
+Maliki
+Shafi'i
+Hanbali
+Maturidi
+Hanafi
+Barelvi
+Deobandi
+Gedimu
+Athari
+Salafi
+Madkhalism
+Wahhabism
+Ahle Hadith
+Islamism
+Islamic Modernism
+Muʿtazila
+Satpanth
+Syncretic
+Ali-Illahism
+Din-i Ilahi
+Nuristanis
+Kafirism
+Wetu Telu
+Other
+Ahmadiyya
+European Islam
+Jadid
+Liberal movements within Islam
+Mahdavia
+Mahdist State
+Mahdist movement
+Quranism
+Riaz Ahmed Gohar Shahi
+Messiah Foundation International
+Judaism
+Kabbalah
+Kabbalah
+Non-Rabbinic Judaism
+Haymanot
+Karaite Judaism
+Qemant people
+Qemant Judaism
+Samaritanism
+Rabbinic Judaism
+Conservative Judaism
+Humanistic Judaism
+Jewish Renewal
+Orthodox Judaism
+Haredi Judaism
+Dor Daim
+Hardal
+Hasidic Judaism
+Misnagdim
+Sephardic Haredi
+Modern Orthodox Judaism
+Religious Zionism
+Reconstructionist Judaism
+Reform Judaism
+Historical Judaism
+Essenes
+Bana'im
+Hemerobaptists
+Maghāriya
+Nazarene (sect)
+Nasoraeans
+Hypsistarians
+Hypsistarianism
+Pharisees
+Sadducees
+Zealots (Judea)
+Sicarii
+Jewish Christian
+Messianic sects
+Ebionites
+Elcesaites
+Nazarene (sect)
+Nazarenes
+Sabbateans
+Frankism
+Second Temple Judaism
+Frankism
+Babism
+Azali
+Baha'i faith
+Caravan of East and West
+Attempted schisms in the Baháʼí Faith
+Free Baha'is
+Orthodox Baha'i Faith
+Druze
+Druze faith
+Mandaeism
+Iranian religions
+Athinganoi
+Chinese Manichaeism
+Ishikism
+Shabakism
+Yarsani
+Yazidism
+Behafarid
+Ilm-e-Khshnoom
+Khurramites
+Mazdakism
+Mazdaznan
+Zurvanism
+Paganism
+Animism
+Totemism
+Shamanism
+Fetishism
+Kung people
+Abwoi religion
+Acholi people
+Acholi religion
+Afizere
+Afizere traditional religion
+Akan religion
+Asase Ya/Afua
+Asante religion
+Zande people
+Azande traditional religion
+Bafia people
+Bafia religion
+Baka people (Cameroon and Gabon)
+Baka traditional religion
+Bantu mythology
+Bantu religion
+Kisii people
+Abagusii religion
+Kamba people
+Akamba traditional religion
+AmaMpondomise
+AmaMpondomise traditional religion
+Badimo
+Balondo Civilization
+Balondo religion
+Baluba mythology
+Baluba religion
+Bamileke people
+Bamileke religion
+Bamum people
+Bamum traditional religion
+Banyole
+Banyole traditional beliefs
+Bubi people
+Bubi spirituality
+Bushongo mythology
+Bushongo religion
+Bwiti
+Chaga people
+Chaga faith
+Chokwe people
+Chokwe spiritual beliefs
+Duala people
+Duala traditional religion
+Fipa people
+Fipa religion
+Furiiru people
+Furiiru traditional religion
+Giriama people
+Giriama traditional religion
+Herero people
+Herero traditional faith
+Himba people
+Himba religion
+Kikuyu people
+Kikuyu traditional religion
+Kongo religion
+Kwe people
+Kwe faith
+Lozi mythology
+Lozi religion
+Luvale people
+Luvale religion
+Makua people
+Makua traditional religion
+Mbole people
+Mbole religion
+Nyakyusa people
+Nyakyusa religion
+Ovambo people
+Ovambo traditional religion
+Pedi people
+Pedi traditional religion
+Songye
+Songye religion
+Suku people
+Suku religion
+Swazi people
+Swazi traditional religion
+Tonga people (Malawi)
+Tonga religion
+Tsonga people
+Tsonga traditional religion
+Tumbuka mythology
+Tumbuka religion
+Xhosa people
+Xhosa traditional religion
+Zulu traditional religion
+Baoule people
+Baoule traditional religion
+Bari people
+Bari traditional religion
+Bassa people (Liberia)
+Bassa traditional religion
+Pojulu people
+Biri traditional religion
+Bobo people
+Bobo religion
+Hausa animism
+Bori
+Bwa people
+Bwa religion
+Chamba people
+Chamba traditional religion
+Dahomean religion
+Damara people
+Damara religion
+Dan people
+Dan religion
+Dinka religion
+Dogon people
+Dogon religion
+Ebira people
+Ebira traditional religion
+Edo people
+Edo traditional religion
+Efik mythology
+Efik religion
+Ekoi mythology
+Ekoi religion
+Esan people
+Esan traditional religion
+Fali people
+Fali traditional religion
+Frafra people
+Frafra beliefs
+Gbagyi people
+Gbagyi traditional religion
+Hadza people
+Hadza religion
+Babur and Bura people
+Hyel
+Idoma people
+Idoma traditional religion
+Ijaw people
+Ijaw traditional religion
+Ibibio people
+Inam
+Jola people
+Jola traditional religion
+Kalenjin mythology
+Asisian religion
+Khoekhoe
+Khoekhoen religion
+Kissi people
+Kissi traditional religion
+Kono people
+Kono traditional religion
+Koore people
+Koore religion
+Krahn people
+Krahn religion
+Kuku people
+Kuku traditional beliefs
+Lobi people
+Lobi animism
+Lotuko mythology
+Lotuko ethnic religion
+Lugbara mythology
+Lugbara religion
+Maasai mythology
+Maasai religion
+Madi people
+Madi traditional religion
+Manjak people
+Manjak religion
+Mbuti mythology
+Mbuti religion
+Moba people
+Moba ethnic religion
+Mursi people
+Mursi animism
+Nso people
+Nso religion
+Nuer people
+Nuer religion
+Nyongo society
+Nyongo Society
+Bakossi people
+Bakossi beliefs
+Odinani
+Odinala / Odinani
+Oropom people
+Oropom religion
+Safwa people
+Safwa religion
+Samburu people
+Samburu religion
+San religion
+Serer religion
+Sidama people
+Sidama religion
+Surma people
+Surma religion
+Tammari people
+Tammari traditional religion
+Temne people
+Temne traditional religion
+Traditional Berber religion
+Turkana people
+Turkana traditional religion
+Urhobo people
+Urhobo traditional religion
+West African Vodun
+Vodun
+Waaqeffanna
+Yoruba religion
+Ifá
+Indigenous religion in Zimbabwe
+Shona people
+Shona traditional religion
+Abakuá
+Arará
+Arara religion
+Candomblé
+Candomblé Bantu
+Candomblé Jejé
+Candomblé Ketu
+Comfa
+Convince
+Cuban Vodú
+Dominican Vudú
+Espiritismo
+Haitian Vodou
+Hoodoo (folk magic)
+Hoodoo
+Kélé
+Kumina
+Louisiana Voodoo
+Montamentu
+Myal
+Obeah
+Palo (religion)
+Palo
+Quimbanda
+Santería
+Tambor de Mina
+Trinidad Orisha
+Umbanda
+Winti
+Saramaka
+Saramaka religion
+Evenks
+Evenki shamanism
+Manchu shamanism
+Turkic mythology
+Turko
+Altai people
+Altaic shamanism
+Burkhanism
+Dukha people
+Dukha shamanism
+Mongolian shamanism
+Black shamanism
+Black Shamanism
+Tengrism
+Aiyy Faith
+Aiyy
+Tengir Ordo
+Vattisen Yaly
+Nanai people
+Nanai shamanism
+Oroqen people
+Oroqen shamanism
+Shors
+Shor shamanism
+Soyot
+Soyot shamanism
+Ulch people
+Ulch shamanism
+Yakut shamanism
+Yakut Shamanism
+Ache people
+Ache traditional tribal religion
+Achuar
+Achuar religious beliefs
+Acoma Pueblo
+Acoma traditional religion
+Aguaruna people
+Aguaruna traditional beliefs
+Akawaio people
+Akawaio religion
+Alaska Native religion
+Inuit religion
+Tanana Athabaskans
+Tanana shamanism
+Yup'ik
+Yupik shamanism
+Siberian Yupik
+Yuit shamanism
+Sirenik Eskimos
+Sirenik shamanism
+Basketmaker III Era
+Ancestral Pueblo religion (Basketmaker III)
+Andoque people
+Andoque religion
+Anishinaabe traditional beliefs
+Ojibwe
+Ojibwe spirituality
+Apache
+Apache traditional tribal religion
+Arhuaco people
+Arhuaco spirituality
+Atacama people
+Atacama religious culture
+Blackfoot religion
+Bororo
+Bororo totemism
+Caddo
+Caddo religion
+Traditional narratives (Native California)
+Californian traditional religions
+Achomawi people
+Achomawi religion
+Acjachemen
+Acjachemen religion
+Kuksu (religion)
+Kuksu
+Cahto
+Cahto religion
+Esselen
+Esselen spirituality
+Miwok mythology
+Miwok religion
+Ohlone mythology
+Ohlone spirituality
+Pomo religion
+Northern Paiute people
+Northern Paiute shamanism
+Mohave people
+Mohave religion
+Wiyot
+Wiyot spirituality
+Calusa
+Calusa native religion
+Chaná mythology
+Chaná religion
+Cherokee mythology
+Cherokee spiritual beliefs
+Choctaw mythology
+Choctaw religion
+Creek mythology
+Creek religion
+Croatan
+Croatan religious beliefs
+Crow religion
+Fuegians
+Fuegian spirituality
+Selk'nam mythology
+Selk'nam religion
+Garifuna
+Garifuna spirituality
+Guarani mythology
+Guarani religion
+Guarayos
+Guarayos traditional religious beliefs
+Guayupe
+Guayupe traditional religion
+Gwich'in people
+Gwich'in traditional beliefs
+Haida mythology
+Haida religion
+Ho-Chunk mythology
+Ho-Chunk religion
+Hopi mythology
+Hopi religion
+Huaorani people
+Huaorani traditional animism
+Hupda people
+Hupda cosmgony
+Religion in the Inca Empire
+Incan religion
+Chavin culture
+Chauvin religion
+Nazca culture
+Nazca religious beliefs
+Wari' people
+Wari' beliefs
+Illinois Confederacy
+Illinois religion
+Innu
+Innu religion
+Iroquois mythology
+Iroquois religion
+Mohawk people
+Mohawk traditional religion
+Seneca mythology
+Seneca religion
+Wyandot religion
+Jivaroan peoples
+Jivaroan religion
+Karankawa people
+Karankawa indigenous religion
+Kayabi people
+Kayabi traditional tribal religion
+Kalapalo people
+Kalapalo beliefs
+Kalinago
+Kalinago religion
+Kogi people
+Kogi traditional religion
+Kuikuro
+Kuikoro religion
+Kwakwakaʼwakw mythology
+Kwakwakaʼwakw religion
+Lakota mythology
+Lakota religion
+Lenape mythology
+Lenape religion
+Lokono
+Lokono animist spirituality
+Maleku people
+Maleku animism
+Mandan
+Mandan religion
+Mapuche religion
+Marajoara
+Marajoara religion
+Matses
+Matses animism
+Mesoamerican religion
+Aztec religion
+Cora people
+Cora religion
+Huichol people
+Huichol traditional religion
+Maya religion
+Chuj people
+Chuj traditional beliefs
+Huastec civilization
+Huastec religion
+Lacandon people
+Lacandon traditional beliefs
+Mazatec
+Mazatec traditional religion
+Maximón
+Maximon
+Mopan people
+Mopan traditional religion
+Pech people
+Pech traditional religion
+Q'eqchi'
+Q'eqchi' religion
+Tzeltal people
+Tzeltal religion
+Tzotzil
+Tzotzil native religion
+Tzʼutujil people
+Tzʼutujil traditional religion
+Mixe people
+Mixe religion
+Nagual
+Nagualism
+Olmec religion
+Purépecha religion
+Teotihuacan
+Teotihuacan religion
+Tepehuan
+Tepehuan religious beliefs
+Tlapanec people
+Tlapanec religion
+Totonac
+Totonac traditional religion
+Zapotec civilization
+Zapotec religion
+Midewiwin
+Abenaki mythology
+Abenaki religious beliefs
+Mi'kmaq
+Mi'kmaq traditional religion
+Miskito people
+Old Miskito religion
+Muisca religion
+Muzo people
+Muzo traditional religion
+Navajo
+Navajo spirituality
+Nuu-chah-nulth mythology
+Nuu-chah-nulth religion
+Omaha people
+Omaha religion
+Osage Nation
+Osage traditional spirituality
+Pawnee mythology
+Pawnee religion
+Parakanã people
+Parakanã shamanism
+Pech people
+Pech traditional religion
+Pemon people
+Pemon traditional tribal religion
+Penobscot
+Penobscot spirituality
+Pericues
+Pericues religion
+Piaroa people
+Piaroa traditional religion
+Tsenacommacah
+Powhatan native religion
+Puruhá
+Puruhá traditional religion
+Q'ero
+Q'ero spirituality
+Quechua people
+Quechua traditional beliefs
+Rikbaktsa people
+Rikbaktsa traditional beliefs
+Salishan oral narratives
+Salish narratives
+Seminole
+Seminole traditional native religion
+Seri people
+Seri religion
+Shuar
+Shuar shamanism
+Southeastern Ceremonial Complex
+Taensa
+Taensa native tribal religion
+Taíno
+Taino spirituality
+Tairona
+Tairona religion
+Talamancan mythology
+Talamancan religion
+Tapirape people
+Tapirape shamanism
+Tehuelche people
+Tehuelche beliefs
+Ticuna
+Ticuna shamanism
+Toba people
+Toba belief system
+Philosophy and religion of the Tlingit
+Tlingit religion
+Tsimshian mythology
+Tsimshian religion
+Ute mythology
+Ute religion
+Wai-Wai people
+Wai-Wai religion
+Wapishana
+Wapishana religion
+Warao people
+Warao traditional beliefs
+Wayuu people
+Wayuu religion
+Yaruro
+Yaruro traditional tribal religion
+Zuni mythology
+Zuni religion
+Asur people
+Asur religion
+Birhor people
+Birhor traditional religion
+Bru people
+Bru religion
+Khasi people
+Ka Niam Khasi
+Mon people
+Mon religion
+Nicobarese people
+Nicobarese traditional religion
+Pnar people
+Ka Niamtre
+Pacoh people
+Paoch animism
+Santal people
+Santal religion
+Sarnaism
+Senoi
+Senoi ethnic religion
+Sora people
+Sora traditional beliefs
+Tampuan people
+Tampuan animism
+Kawas (mythology)
+Amis native religion
+Aliran Kepercayaan
+Kenyah people
+Adat Pu'un
+Torajan people
+Aluk
+Parmalim
+Batak Parmalim
+Dayak people
+Dayak religion
+Kaharingan
+Savu people
+Jingi Tiu
+Kejawèn
+Kapitayan
+Kangeanese people
+Kangeanese religion
+Pemena
+Karo Pemena
+Kendayan people
+Kendayan religion
+Marapu
+Rejang people
+Rejang religion
+Rotenese people
+Rotenese religion
+Saminism Movement
+Sangirese people
+Sangirese religion
+Sumbawa people
+Sumbawa religion
+Sunda Wiwitan
+Sundanese Wiwitan
+Tolotang
+Wai Apu people
+Wai Apu religion
+Indigenous religious beliefs of the Philippines
+Dayawism
+Batak people (Philippines)
+Batak folk religion
+Bicolano people
+Bicolano religion
+Blaan people
+Blaan folk religion
+Capiznon people
+Capiznon folk religion
+Cuyunon people
+Cuyunon folk religion
+Gaddang people
+Gaddang folk religion
+Ifugao people
+Ifugao folk religion
+Ilocano people
+Ilocano folk religion
+Itneg people
+Itneg folk religion
+Kalinga people
+Kalinga folk religion
+Kankanaey people
+Kankanaey folk religion
+Karay-a people
+Karay-a folk religion
+Mangyan people
+Mangyan folk religion
+Palawan people
+Palawan folk religion
+Pangasinan people
+Pangasinan folk religion
+Sama-Bajau
+Sama Bajau folk religion
+Sambal people
+Sambal folk religion
+Subanon people
+Subanon folk religion
+Indigenous religious beliefs of the Tagalog people
+Tagalog folk religion
+Indigenous religious beliefs of the Tagbanwa people
+Tagbanwa folk religion
+Tboli people
+Tboli folk religion
+Teduray people
+Teduray folk religion
+Visayans
+Visayan folk religion
+Malagasy mythology
+Fomba Gasy
+Jarai people
+Jarai religion
+Kanakanavu people
+Kanakanavu native religion
+Malaysian folk religion
+Datuk Keramat
+Jakun people
+Jakun religion
+Iban people
+Pengarap Iban
+Melanau people
+Melanau religion
+Momolianism
+Murut people
+Murut religion
+Orang Kanaq
+Orang Kanaq religion
+Orang Seletar
+Orang Seletar religion
+Semai people
+Semai religion
+Semaq Beri people
+Semaq Beri religion
+Temuan people
+Temuan religion
+Micronesian mythology
+Micronesian religion
+Carolinian people
+Carolinian religion
+Chamorro people
+Chamorro religion
+Chuukese people
+Chuukese religion
+Nauruan indigenous religion
+Polynesian narrative
+Cook Islands mythology
+Cook Islands narrative
+Hawaiian religion
+Mangarevan narrative
+Māori religion
+Niuean mythology
+Niuean narrative
+Rapa Nui mythology
+Rapa Nui narrative
+Samoan mythology
+Samoan narrative
+Tahiti and Society Islands mythology
+Tahitian narrative
+Tongan religion
+Tongan narrative
+Tuvaluan mythology
+Tuvaluan narrative
+Puyuma Pulingaw
+Paiwan shamanism
+Sakizaya people
+Sakizaya native religion
+Taivoan people
+Taivoan animism
+Tao people
+Tao native religion
+Circassian paganism
+Khabzeism
+Vainakh religion
+Khonds
+Khond traditional religion
+Gondi people
+Koyapunem
+Sauria Paharia people
+Sauria Paharia religion
+Tamil mythology
+Tamil religion
+Toda people
+Toda religion
+Kalash people
+Kalashism
+Nagpuria people
+Nagpuria religion
+Ossetian mythology
+Ossetian native religion
+Folk practices in Punjab
+Punjabi folk religion
+Tharu people
+Tharu religionAustralian Aboriginal religion and mythology
+Australian Aboriginal spirituality
+Gamilaraay
+Gamilaraay dreaming
+Larrakia people
+Larrakia dreaming
+Aboriginal Tasmanians
+Tasmanian Aboriginal spirituality
+Religion in Fiji
+Fijian ancient religion
+Kanak people
+Kanak traditional beliefs
+Papuan mythology
+Papuan religion
+Dumo people
+Dumo spirituality
+Fore people
+Fore traditional beliefs
+Kaluli people
+Kaluli religion
+Korowai people
+Korowai religion
+Trobriand people
+Trobriand traditional beliefs
+Urapmin people
+Urapmin traditional beliefs
+Aeta people
+Aeta religion
+Ati people
+Ati animism
+Onge people
+Onge native religion
+Semang
+Semang animism
+Vedda
+Vedda original religion
+Ainu people
+Ainu religion
+Koryaks
+Koryak religion
+Itelmens
+Itelmen religion
+Nivkh people
+Nivkh traditional religion
+Yukaghir people
+Yukaghir shamanism
+Banrawats
+Banrawat religion
+Bathouism
+Biate people
+Biate animism
+Bimoism
+Bon
+Dongba
+Pumi people
+Hangui
+Burmese folk religion
+Lisu people
+Lisu religion
+Chang Naga
+Chang Naga animism
+Chutia people
+Chutia religion
+Mosuo
+Daba
+Pumi people
+Dingba
+Donyi-Polo
+Garo people
+Sangsarek
+Gurung shamanism
+Hani people
+Hani religion
+Mizo religion
+Hnam Sakhua
+Kayan people (Myanmar)
+Kan Khwan
+Karbi people
+Karbi animism
+Karen people
+Karen animism
+Jingpo people
+Jingpo religion
+Kirat Mundhum
+Kiratism
+Maring people
+Maring beliefs
+Miji people
+Miji animism
+Mizo religion
+Mro-Khimi people
+Mro religion
+Hruso people
+Nyezi-No
+Reang
+Reang religion
+Sanamahism
+Tangsa Naga
+Tangsa Naga animism
+Toto people
+Toto nature religion
+Akha people
+Zahv
+Hlai people
+Hlai animism
+Miao folk religion
+Kev Dab Kev Qhuas
+Pa Then people
+Pa Then religion
+Qabiao people
+Qabiao religion
+Tai folk religion
+Satsana Phi
+Ahom religion
+Giay people
+Giay animism
+Tai folk religion
+Lamet religion
+Nung people
+Nung religion
+Saek people
+Saek religion
+Komi mythology
+Komi shamanism
+Mari Native Religion
+Fugara
+Beduin shamanism
+John Frum
+Johnson cult
+Prince Philip Movement
+Vailala Madness
+African Zionism
+Ausar Auset Society
+Black Muslims
+American Society of Muslims
+Dini Ya Msambwa
+Five-Percent Nation
+Godianism
+Igbe religion
+Moorish Science Temple of America
+Moorish Orthodox Church of America
+Mumboism
+Nation of Islam
+United Nation of Islam
+Nuwaubian Nation
+Black Hebrew Israelites
+African Hebrew Israelites of Jerusalem
+Church of God and Saints of Christ
+Commandment Keepers
+Israelite Church of God in Jesus Christ
+Israelite School of Universal Practical Knowledge
+Nation of Yahweh
+One West Camp
+Rastafari
+Bobo Ashanti
+Nyabinghi
+Twelve Tribes of Israel (Rastafari)
+Twelve Tribes of Israel
+Ariosophy
+British Israelism
+Christian Identity
+Creativity (religion)
+Creativity
+French Israelism
+Nordic Israelism
+Wotansvolk
+Ghost Dance
+Indian Shaker Church
+Longhouse Religion
+Mexicayotl
+peyote meetings
+Native American religions
+Wasshat religionAntoinism
+Beili Wang
+Branch Davidians
+Nigerian Chrislam
+Chrislam
+Eastern Lightning
+Milah Abraham
+Gafatar
+Grail Movement
+Holy Spirit of Blood and Water Church
+Lalpa Kohhran Thar
+Lalpa Kohran Thar
+Ngabe
+Mama Tada
+Mentuhui
+Modekngei
+Noahidism
+Pai Mārire
+Pai Marire
+Pilgrims of Arès
+Pilgrims of Ares
+Rātana
+Ringatū
+Ringatu
+The Family International
+World Elijah Evangelical Mission
+ZhushenjiaoBaguadao
+De teaching
+Dejiao
+Huangjidao
+Huangtiandao
+Huazhaidao
+Jiugongdao
+Way of the Gods according to the Confucian Tradition
+Luandao
+Luoism
+Chinese religions of fasting
+Xiantiandao
+Guiyidao
+Shengdao
+Yaochidao
+Yiguandao
+Haizidao
+Dragon Flower Church of the Heart-bound Heavenly Way
+Yixin Tiandao
+Dacheng teaching of Mount Jizu
+Dacheng
+Church of the Highest Supreme
+Hongyangism
+Maitreya teachings
+Maitreyanism
+Sanyiism
+Shanrendao
+Taigu school
+Tiandihui
+Tiandiism
+Tianguangdao
+Tianxian miaodao
+Tianxian Miaodao
+Weixinism
+White Lotus
+Xuanyuan teaching
+Xuanyuandao
+Yellow Sand Society
+Zailiism
+ZhongyongdaoNeo-VedantaAdidam
+Adi Dharm
+Brahmoism
+Brahmo Samaj
+Sadharan Brahmo Samaj
+Ananda movement
+Ananda
+Swami Paramananda
+Ananda Ashrama
+Ananda Marga
+Arya Samaj
+Ayyavazhi
+Chinmaya Mission
+International Society for Krishna Consciousness
+Hare Krishna
+Mahanam Sampraday
+Mahima Dharma
+Matua Mahasangha
+Kalki Bhagawan
+Oneness Movement
+Rajneesh movement
+Satsang (Deoghar)
+Satsang
+Shirdi Sai Baba movement
+Sivananda Yoga Vedanta Centres
+Sri Aurobindo Ashram
+Sri Ramana Ashram
+Neo-Advaita
+Swaminarayan Sampradaya
+Bochasanwasi Akshar Purushottam Swaminarayan Sanstha
+Laxmi Narayan Dev Gadi
+International Swaminarayan Satsang Mandal
+Swaminarayan Gurukul
+Nar Narayan Dev Gadi
+International Swaminarayan Satsang Organisation
+Narnarayan Dev Yuvak Mandal
+Swaminarayan_Sampradaya
+Swaminarayan Gadi (Maninagar)
+Swaminarayan Mandir Vasna Sanstha
+Transcendental MeditationCheondoism
+Jeungsanism
+Daesun Jinrihoe
+Jeung San Do
+Bocheonism
+Suwunism
+DaejongismĐạo Bửu Sơn Kỳ Hương
+Hòa Hảo
+Tứ Ân Hiếu Nghĩa
+Diamond Way Buddhism
+Falun Gong
+Guanyin Famen
+Humanistic Buddhism
+Navayana
+New Kadampa Tradition
+Nipponzan-Myōhōji-Daisanga
+PL Kyodan
+Reiyūkai
+Risshō Kōsei Kai
+Rimé movement
+Shambhala Buddhism
+Shinnyo-en
+Soka Gakkai
+Triratna Buddhist Community
+True Buddha School
+Won BuddhismShree Shree Anandamayee Sangha
+Anandamayee Sangha
+Bell Church
+Bell religion
+Brahma Kumaris
+Caodaism
+Đạo Dừa
+Meivazhi
+Omnism
+Open-source religion
+Satya Dharma
+Sathya Sai Baba movement
+Share International
+SubudAum Shinrikyo
+Aum Shinrikyo
+Aleph
+Hikari no Wa
+Happy Science
+Ryukyuan religion
+Ijun
+Konkokyo
+Kurozumikyō
+Oomoto
+Church of World Messianity
+Mahikari
+Seicho-no-Ie
+Shōroku Shintō Yamatoyama
+Shinji Shumeikai
+Shumei
+Sekai Shindokyo
+Shinmeiaishinkai
+Tenrikyo
+Tenshō Kōtai Jingūkyō
+ZenrinkyoContemporary Sant Mat movements
+Advait Mat
+Radha Soami
+Radha Soami Satsang Beas
+Radha Soami Satsang Sabha
+Radha Soami Satsang Dayagbal
+Radha Swami Satsang, Dinod
+Kirpal Singh
+Ruhani Satsang
+Manavta Mandir
+Science of Spirituality
+Radha Soami
+Ancient Teachings of the Masters
+Dera Sacha Sauda
+Eckankar
+Elan Vital (organization)
+Elan Vital
+Movement of Spiritual Inner Awareness
+Ravidassia
+Polytheistic reconstructionismArmenian neopaganism
+Hetanism
+Baltic neopaganism
+Dievturība
+Romuva (religion)
+Romuva
+Caucasian neopaganism
+Abkhaz neopaganism
+Assianism
+Celtic neopaganism
+Celtic Reconstructionist Paganism
+Celtic reconstructionist paganism
+Druidry (modern)
+Druidry
+Heathenry (new religious movement)
+Heathenry
+Hellenism (religion)
+Hellenism
+Heraka
+Italo-Roman neopaganism
+Nova Roma
+Roman Traditional Movement
+Kemetism
+Kemetic Orthodoxy
+Semitic neopaganism
+Slavic Native Faith
+Rodnovery
+Native Polish Church
+Peterburgian Vedism
+Rodzima Wiara
+Rodnover Confederation
+RUNVira
+Sylenkoism
+Union of Slavic Native Belief Communities
+Ynglism
+Uralic neopaganism
+Estonian neopaganism
+Finnish neopaganism
+Suomenusko
+Hungarian neopaganism
+Mordvin Native Religion
+Mastorava
+Udmurt Vos
+Zalmoxianism
+Zuism
+Adonism
+Christianity and neopaganism
+Christopaganism
+Christianity and neopaganism
+Christian Wicca
+Church of All Worlds
+Church of Aphrodite
+Cochrane's Craft
+María Lionza
+Maria Lionza
+Druidry (modern)
+Druidry
+Ár nDraíocht Féin
+Order of Bards, Ovates, and Druids
+Reformed Druids of North America
+El Tío
+El Tio
+Feraferia
+Goddess movement
+Huna (New Age)
+Huna
+Ivanovism
+Mru people
+Krama
+Neoshamanism
+Pow-wow (folk magic)
+Pow-wow
+Radical Faeries
+Ringing Cedars' Anastasianism
+Santa Muerte
+Stregheria
+Summum
+Technopaganism
+Wicca
+British Traditional Wicca
+Gardnerian Wicca
+Alexandrian Wicca
+Central Valley Wicca
+Algard Wicca
+Chthonioi Alexandrian Wicca
+Blue Star Wicca
+Seax-Wica
+Universal Eclectic Wicca
+Celtic Wicca
+Dianic Wicca
+Faery Wicca
+Feri Tradition
+Georgian Wicca
+Odyssean Wicca
+Wiccan church
+Covenant of the GoddessChurch of the Universe
+Neo-American Church
+Santo Daime
+Temple of the True Inner Light
+Carlos Castaneda
+Tensegrity
+THC Ministry
+União do Vegetal
+Association for Research and Enlightenment
+Chaos magic
+Chaos Magic
+Conversations with God
+Eckankar
+Love Has Won
+Rainbow Family
+The Family (Australian New Age group)
+The Family
+Christian Science
+Church of Divine Science
+Church of the Truth
+Church Universal and Triumphant
+Home of Truth
+Jewish Science
+Psychiana
+Religious Science
+Seicho-no-Ie
+The Infinite Way
+Unity Church
+Universal Foundation for Better Living
+Church of Euthanasia
+Church of the Flying Spaghetti Monster
+Church of the SubGenius
+Dinkoism
+Discordianism
+Dudeism
+Earthseed
+Terasem Movement
+Terasem
+Iglesia Maradoniana
+Jediism
+Kibology
+Kopimism
+Landover Baptist Church
+Omphalos hypothesis
+Last Thursdayism
+The Elder Scrolls
+The Nine Divines
+'Pataphysics
+Sisters of Perpetual Indulgence
+United Church of Bacon
+Post-theismAbrahamites
+Russian cosmism
+Cosmism
+Cult of Reason
+Cult of the Supreme Being
+Deism
+Christian Deism
+Ethical movement
+Freethought
+North Texas Church of Freethought
+God-Building
+Renaissance Humanism
+Humanism
+Ietsism
+Moorish Orthodox Church of America
+Pandeism
+Pantheism
+Naturalistic pantheism
+Religion of Humanity
+Church of Humanity
+Saint-Simonianism
+Syntheism
+Theophilanthropy
+Unitarian Universalism
+Universal Life ChurchAetherius Society
+Ashtar Galactic Command
+Chen Tao ("True Way")
+Fiat Lux (UFO religion)
+Fiat Lux
+Ground Crew Project
+Heaven's Gate (religious group)
+Heaven's Gate
+Industrial Church of the New World Comforter
+Mark-Age
+Nuwaubian Nation
+Order of the Solar Temple
+Raëlism
+Scientology
+Free Zone (Scientology)
+Independent Scientology
+The Seekers (rapturists)
+The Seekers
+Unarius Academy of Science
+Universe people
+The Urantia Book
+Urantia movementCeremonial magic
+Left-hand path and right-hand pathAnthroposophy
+Archeosophical Society
+Builders of the Adytum
+Fourth Way
+Fraternity of the Inner Light
+Hermeticism
+Hermetic Order of the Golden Dawn
+The Hermetic Order of the Golden Dawn, Inc.
+Illuminates of Thanateros
+Luciferianism
+Fraternitas Saturni
+Neo-Luciferian Church
+New Acropolis
+Occultism
+Gaianism
+Mayanism
+The Michael Teachings
+Michael Teachings
+Ordo Aurum Solis
+Otherkin
+Rosicrucian
+Ancient Mystical Order Rosae Crucis
+Lectorium Rosicrucianum
+Rosicrucian Fellowship
+Satanism
+Satanism
+Non-theistic Satanism
+LaVeyan Satanism
+Church of Satan
+First Satanic Church
+The Satanic Temple
+Theistic Satanism
+Joy of Satan Ministries
+Joy of Satan
+Order of Nine Angles
+Our Lady of Endor Coven
+Temple of the Black Light
+Temple of Set
+Spiritualism
+Oahspe
+Faithism
+Thelema
+A∴A∴
+Ordo Templi Orientis
+Typhonian Order
+Theosophy
+Neo-Theosophy
+Agni Yoga
+Angi Yoga
+Roerichism
+Thee Temple ov Psychick Youth
+Religion and ritual of the Cucuteni–Trypillia culture
+Cucuteni–Trypillia religion
+Funnelbeaker culture
+Funnelbeaker religion
+Hemudu culture
+Hemudu religion
+Hongshan culture
+Hongshan religion
+Linear Pottery culture
+Linear Pottery religion
+Paleolithic religion
+Urreligion
+Urmonotheismus
+Varna culture
+Varna religionAncient Egyptian religion
+Atenism
+Ancient Mesopotamian religion
+Assyria
+Ancient Assyrian religion
+Babylonian religion
+Sabians
+Sabian religion
+Shamsīyah
+Shamsiyah
+Sumerian religion
+Ancient Semitic religion
+Ancient Canaanite religion
+Yahwism
+Religion of the Indus Valley Civilization
+Harappan religion
+Hattians
+Hattian religion
+Hittite mythology and religion
+Hittite religion
+Hurrian religion
+Liangzhu culture
+Liangzhu religion
+Longshan culture
+Longshan religion
+Luwian religion
+Minoan religion
+Mycenaean religion
+Nordic Bronze Age
+Nordic Bronze Age religion
+Proto-Indo-European mythology
+Proto-Indo-European religion
+Paleo-Balkan mythology
+Paleo-Balkan religion
+Proto-Indo-Iranian religion
+Mahabad (prophet)
+Mahabadism
+Proto-Uralic religion
+Shang dynasty
+Shang religion
+Urnfield culture
+Urnfield religionAdena culture
+Adena religion
+Kingdom_of_Aksum
+Aksumite religion
+Albanian mythology
+Albanian folk beliefs
+Proto-Celtic paganism
+Ancient Celtic religion
+Breton mythology
+Breton paganism
+Cantabrian mythology
+Cantabrian paganism
+Celtic Animism
+Cornish mythology
+Cornish paganism
+Irish mythology
+Irish paganism
+Isle of Man
+Manx paganism
+Scottish mythology
+Scottish paganism
+Hebridean mythology and folklore
+Hebridean paganism
+Welsh mythology
+Welsh paganism
+Ancient Greek religion
+Greco-Buddhism
+Greco-Roman mysteries
+Jupiter Dolichenus
+Cult of Jupiter Dolichenus
+Samothrace temple complex
+Cult of the Great Gods
+Cybele
+Cybele's Cult
+Dionysian Mysteries
+Dionysian mysteries
+Orphism (religion)
+Orphism
+Eleusinian Mysteries
+Eleusinian mysteries
+Mysteries of Isis
+Hellenistic religion
+Hermeticism
+Neoplatonism
+Pythagoreanism
+Neopythagoreanism
+Stoicism
+Ancient Iranian religion
+Armenian mythology
+Armenian paganism
+Basque mythology
+Basque paganism
+Cantabrian mythology
+Cantabrian religion
+Castro culture
+Castro religion
+Dacians
+Dacian religion
+Ebla
+Eblaite religion
+Elam
+Elamite religion
+Etruscan religion
+Gallaeci
+Gallaecian religion
+Georgian mythology
+Georgian paganism
+Germanic paganism
+Pre-Christian Alpine traditions
+Alpine paganism
+Anglo-Saxon paganism
+Cimbri
+Cimbri religion
+Continental Germanic mythology
+Continental Germanic paganism
+Frankish mythology
+Frankish paganism
+Gothic paganism
+Old Norse religion
+Armazi (god)
+Iberian religion
+Illyrian religion
+Iapydes
+Iapydes religion
+Ligures
+Ligurian religion
+Lusitanian mythology
+Lusitanian religion
+Lydians
+Lydian religion
+Nuragic civilization
+Nuragic religion
+Paeonians
+Paeonian religion
+Phrygians
+Phrygian religion
+Punic religion
+Religion in ancient Rome
+Gallo-Roman religion
+Imperial cult of ancient Rome
+Imperial cult
+Greco-Roman mysteries
+Mithraism
+Religion in pre-Islamic Arabia
+Nabataean religion
+Sabaeans
+South Arabian paganism
+Samnite religion
+Scythian religion
+Śramaṇa
+Sramana
+Thracian religion
+Umbri
+Umbrian religion
+Marsi
+Marsi religion
+Urartu
+Urartu religion
+Historical Vedic religion
+Vedicism
+Arioi
+Balinese mythology
+Balinese religion
+Baltic mythology
+Baltic paganism
+Prussian mythology
+Prussian paganism
+Latvian mythology
+Latvian paganism
+Lithuanian mythology
+Lithuanian paganism
+Batak
+Batak religion
+Bulgars
+Bulgar religion
+Pagan religions of Azerbaijan
+Caucasian Albanian paganism
+Chimor
+Chimor religion
+Estonian mythology
+Estonian shamanism
+Finnish paganism
+Finnish shamanism
+Guanches
+Guanche religion
+Shamanistic remnants in Hungarian folklore
+Hungarian shamanism
+Khitan people
+Khitan religion
+Jamaican Maroon religion
+Lima culture
+Lima religion
+Moche culture
+Moche religion
+Sámi shamanism
+Slavic paganism
+Tiwanaku Empire
+Tiwanaku religion
+Tocharians
+Tocharian religion
+Vainakh religion
+Wari culture
+Religion in Asia
+Religion in Oceania
+Religion in Europe
+Religion in North America
+Religion in South America
+Religion by country
+List of state-established religions
+Buddhism by country
+Buddhism in the United States
+Christianity by country
+Roman Catholicism by country
+Eastern Orthodoxy by country
+Protestantism by country
+Oriental Orthodoxy by country
+Hinduism by country
+Islam by country
+Ahmadiyya by country
+Judaism by country
+Sikhism by country
+Alchemy
+Ceremonial magic
+Chaos magic
+Civil religion
+Enochian magic
+Goetia
+Juche
+List of Catholic rites and churches
+List of mythologies
+List of pantheons
+Lists of people by belief
+List of religious organizations
+Magic (supernatural)
+Magic
+Mythology
+Religious fundamentalism
+Witchcraft (contemporary)
+Witchcraft
