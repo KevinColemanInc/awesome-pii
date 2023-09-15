@@ -4,7 +4,7 @@ Awesome-PII is a tool collection related to detecting, extracting, and removing 
 
 # Regex
 
-The [regexes.txt](regexes.txt) schema may change. I may change the schema later for future versions.
+The [regexes.yaml](regexes.yaml) schema may change. I may change the schema later for future versions.
 
 Regexes are tested with ruby 2.5.9 on [Rubular](https://rubular.com/).
 

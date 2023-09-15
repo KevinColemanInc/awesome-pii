@@ -1,0 +1,2476 @@
+usa:
+  phone:
+    - regex: '[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}'
+      description: 'US Phone; limited support for international formats'
+      example: (454)555-5555, 555-555-5555, +14075551225
+  SSN:
+    - regex: /^(?!666|000|9\d{2})\d{3}-(?!00)\d{2}-(?!0{4})\d{4}$/
+      example: 123-45-6789
+
+email:
+  - regex: '^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+    example: example@example.coom
+  - regex: '[\w-\.]+\[at\]([\w-]+\.)+[\w-]{2,4}'
+    example: test[at]gmail.com"
+  - regex: '[\w-\.]+\@([\w-]+\.?)+[\w-]{2,4}'
+    example: test@gmail
+  - regex: '[\w-\.]+\[at\]([\w-]+\[dot\]?)+[\w-]{2,4}'
+    example: test[at]gmail[dot]com
+  - regex: '[\w-\.]+\[at\]([\w-]+\[dot\]?)+[\w-]{2,4}'
+    example: test[at]gmail[dot]com
+  - regex: '(?:mailto:)?(?P<email>[A-z0-9_.+-]+@[A-z0-9_.-]+\.[A-z]+)'
+    example: "mailto:test@example.com"
+
+socials:
+  instagram:
+    - regex: '(?:(?:http|https):\/\/)?(?:www.)?(?:instagram.com|instagr.am|instagr.com)\/(\w+)'
+      example: http://instagram.com/example
+    - regex: '(?:https?:)?\/\/(?:www\.)?(?:instagram\.com|instagr\.am)\/(?P<username>[A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)'
+      example: 'http://instagr.am/example'
+    - regex: 'i\s?g\s?:?\s??\@\w+'
+      example: 'ig @example'
+    - regex: 'instagram:?\s??\@\w+'
+      example: 'instagram: @example'
+  tiktok:
+    - regex: ~https?://(?:www\.)?tiktok\.com/\S*/video/(\d+)|https?://(?:www\.)?vm.tiktok.com/\S*/~  
+      example: 'url'
+    - regex: tiktok:? ?\@\w+                                                                         
+      example: 'tiktok: @example'
+    - regex: t\s?t\s?:\s??\s??\@\w+                                                                  
+      example: 'tt @example'
+  snapchat:
+    - regex: (?:https?:)?\/\/(?:www\.)?snapchat\.com\/add\/(?P<username>[A-z0-9\.\_\-]+)\/?
+    - regex: s\s?c\s?:\s??\s??\@\w+                      # 
+      example: sc @example
+    - regex: snapchat:?\s??\@\w+
+      example: 'snapchat: @example'
+  linkedin:
+    - regex: (?:https?:)?\/\/(?:[\w]+\.)?linkedin\.com\/in\/(?P<permalink>[\w\-\_À-ÿ%]+)\/?
+      example: https://www.linkedin.com/in/example
+  whatsapp:
+  telegram:
+    - regex: (?:https?:)?\/\/(?:t(?:elegram)?\.me|telegram\.org)\/(?P<username>[a-z0-9\_]{5,32})\/?
+      example: t.me, telegram.me and telegram.org.
+  x_twitter:
+    - regex: (?:https?:)?\/\/(?:[A-z]+\.)?twitter\.com\/@?(?P<username>[A-z0-9_]+)\/status\/(?P<tweet_id>[0-9]+)\/?
+    - regex: twitter:?\s??\@\w+
+      example: 'twitter: @example'
+  facebook:
+    - regex: (?:https?:)?\/\/(?:www\.)?(?:facebook|fb)\.com\/(?P<profile>(?![A-z]+\.php)(?!marketplace|gaming|watch|me|messages|help|search|groups)[A-z0-9_\-\.]+)\/?
+      example: https://www.facebook.com/example
+    - regex: fb:?\s??\w+
+      example: 'fb: example'
+
+internet:
+  ip_4:
+    - regex: ((^\s*((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))\s*$)|(^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$)) # ipv4 and ipv6
+  mac:
+    - regex: ([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})
+  domainName:
+    - regex: \b((?=[a-z0-9-]{1,63}\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,63}\b
+      description: supports puny; May want to limit TLDs to reduce false positives
+
+personal:
+  dateOfBirth:
+    - regex: (0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).([19]{2})?([1-9]{2})
+      description: US date format MM.DD.YYYY
+      example: 07.10.1989, 07-10-1989
+  race:
+    - regex: american indian
+    - regex: alaska native
+    - regex: asian
+    - regex: black american
+    - regex: african american
+    - regex: black
+    - regex: native hawaiian
+    - regex: pacific islander white
+    - regex: african
+    - regex: caribbean
+    - regex: indian
+    - regex: melanesian
+    - regex: australasian
+    - regex: aboriginal
+    - regex: chinese
+    - regex: guamanian
+    - regex: japanese
+    - regex: korean
+    - regex: polynesian
+    - regex: european
+    - regex: anglo saxon
+    - regex: anglosaxon
+    - regex: latin american
+    - regex: arabic
+    - regex: vietnamese
+    - regex: micronesian
+    - regex: declined to respond
+    - regex: other hispanic
+    - regex: us indian
+    - regex: canadian indian
+    - regex: puerto rican
+    - regex: filipino
+    - regex: mexican
+    - regex: alaskan native
+    - regex: cuban
+  religion:
+    - regex: pre-sectarian buddhism
+    - regex: mahayana
+    - regex: ari buddhism
+    - regex: chinese buddhism
+    - regex: tiantai
+    - regex: tendai
+    - regex: cheontae
+    - regex: huayan school
+    - regex: dashabhumika
+    - regex: daśabhūmikā
+    - regex: chan buddhism
+    - regex: seon buddhism
+    - regex: thiền buddhism
+    - regex: trúc lâm
+    - regex: japanese zen
+    - regex: zen buddhism
+    - regex: caodong school
+    - regex: sōtō
+    - regex: keizan
+    - regex: jakuen
+    - regex: kangan giin
+    - regex: giin line
+    - regex: linji school
+    - regex: ōtōkan
+    - regex: otokan line
+    - regex: rinzai school
+    - regex: rinzai
+    - regex: ōbaku
+    - regex: fuke-shū
+    - regex: sanbo kyodan
+    - regex: madhyamaka
+    - regex: east asian mādhyamaka
+    - regex: sanlun
+    - regex: jonang
+    - regex: prasaṅgika
+    - regex: svatantrika
+    - regex: nichiren buddhism
+    - regex: honmon butsuryū-shū
+    - regex: kempon hokke
+    - regex: nichiren shōshū
+    - regex: nichiren shū
+    - regex: pure land buddhism
+    - regex: jōdo shinshū
+    - regex: jodo shinshu hongwanji-ha
+    - regex: honganji-ha
+    - regex: ōtani-ha
+    - regex: yuzu nembutsu
+    - regex: seizan
+    - regex: jōdo-shū
+    - regex: yogacara
+    - regex: yogācāra
+    - regex: east asian yogācāra
+    - regex: nikaya buddhism
+    - regex: theravada
+    - regex: sangharaj nikaya
+    - regex: mahasthabir nikaya
+    - regex: dwara nikaya
+    - regex: shwegyin nikaya
+    - regex: thudhamma nikaya
+    - regex: amarapura–rāmañña nikāya
+    - regex: sri kalyani yogasrama samstha
+    - regex: galduwa forest tradition
+    - regex: siam nikaya
+    - regex: sri lankan forest tradition
+    - regex: dhammayuttika nikaya
+    - regex: thai forest tradition
+    - regex: maha nikaya
+    - regex: dhammakaya movement
+    - regex: vipassana movement
+    - regex: vajrayana
+    - regex: azhaliism
+    - regex: mun \(religion\)
+    - regex: bongthingism
+    - regex: chinese esoteric buddhism
+    - regex: newar buddhism
+    - regex: indonesian esoteric buddhism
+    - regex: shingon buddhism
+    - regex: southern esoteric buddhism
+    - regex: tibetan buddhism
+    - regex: bon
+    - regex: gelug
+    - regex: yellow shamanism
+    - regex: yellow shamanism
+    - regex: kagyu
+    - regex: dagpo kagyu
+    - regex: karma kagyu
+    - regex: drukpa kagyu
+    - regex: shangpa kagyu
+    - regex: nyingma
+    - regex: sakya \(tibetan buddhist school\)
+    - regex: sakya
+    - regex: jonang
+    - regex: bodongpa
+    - regex: āstika and nāstika
+    - regex: āstika
+    - regex: nyaya
+    - regex: mīmāṃsā
+    - regex: mimamsa
+    - regex: samkhya
+    - regex: vaisheshika
+    - regex: vedanta
+    - regex: advaita vedanta
+    - regex: akshar-purushottam darshan
+    - regex: bhedabheda
+    - regex: achintya bheda abheda
+    - regex: dvaitadvaita
+    - regex: dvaita vedanta
+    - regex: pratyabhijna
+    - regex: shaiva siddhanta
+    - regex: shiva advaita
+    - regex: shuddhadvaita
+    - regex: vishishtadvaita
+    - regex: yoga \(philosophy\)
+    - regex: āstika and nāstika
+    - regex: nāstika
+    - regex: ājīvika
+    - regex: ajivika
+    - regex: ajñana
+    - regex: purana kassapa
+    - regex: akiriya
+    - regex: buddhism
+    - regex: charvaka
+    - regex: jainism
+    - regex: pakudha kaccayana
+    - regex: sassatavada
+    - regex: hindu denominations
+    - regex: sant mat
+    - regex: dadu dayal
+    - regex: dadupanth
+    - regex: kabir panth
+    - regex: ravidassia religion
+    - regex: sadh
+    - regex: shaivism
+    - regex: aghori
+    - regex: kapalika
+    - regex: kashmir shaivism
+    - regex: kaumaram
+    - regex: nath
+    - regex: adinath sampradaya
+    - regex: inchegeri sampradaya
+    - regex: pashupata shaivism
+    - regex: shaiva siddhanta
+    - regex: veerashaivism
+    - regex: lingayatism
+    - regex: shaktism
+    - regex: shri vidya
+    - regex: srikula
+    - regex: smartism
+    - regex: śrauta
+    - regex: tantra
+    - regex: kaula \(hinduism\)
+    - regex: kaula
+    - regex: vaishnavism
+    - regex: balmikism
+    - regex: bhagavata
+    - regex: bhagavata tradition
+    - regex: brahma sampradaya
+    - regex: madhva tradition
+    - regex: gaudiya vaishnavism
+    - regex: manipuri vaishnavism
+    - regex: haridasa
+    - regex: ekasarana dharma
+    - regex: kapadi sampradaya
+    - regex: mahanubhava
+    - regex: nimbarka sampradaya
+    - regex: pranami
+    - regex: radha vallabh sampradaya
+    - regex: ramdwara
+    - regex: ramsnehi sampradaya
+    - regex: rudra sampradaya
+    - regex: pushtimarg
+    - regex: sri vaishnavism
+    - regex: ramanandi sampradaya
+    - regex: sri vaishnavism
+    - regex: thenkalais
+    - regex: manavala mamunigal
+    - regex: manavala mamunigal sabha
+    - regex: vaishnava-sahajiya
+    - regex: warkari
+    - regex: zunbils
+    - regex: zunism
+    - regex: banjara
+    - regex: banjara hinduism
+    - regex: baul
+    - regex: bhil
+    - regex: bhil hinduism
+    - regex: hajong ethnic religion
+    - regex: dyaoism
+    - regex: hinduism in indonesia
+    - regex: indonesian hinduism
+    - regex: aluk todolo
+    - regex: balinese hinduism
+    - regex: hinduism in java
+    - regex: javanese hinduism
+    - regex: tenggerese people
+    - regex: tenggerese hinduism
+    - regex: kaharingan
+    - regex: manusela people
+    - regex: naurus
+    - regex: nuaulu people
+    - regex: nuaulu religion
+    - regex: tolotang
+    - regex: digambara
+    - regex: kanji panth
+    - regex: taran panth
+    - regex: śvētāmbara
+    - regex: murtipujaka
+    - regex: sthānakavāsī
+    - regex: khalsa
+    - regex: nanakpanthi
+    - regex: nirankari
+    - regex: nirmala \(sect\)
+    - regex: nirmala
+    - regex: sanatan sikh
+    - regex: udasi
+    - regex: ananda yoga
+    - regex: bhakti yoga
+    - regex: hatha yoga
+    - regex: bihar school of yoga
+    - regex: integral yoga \(satchidananda\)
+    - regex: integral yoga
+    - regex: jivamukti yoga
+    - regex: jnana yoga
+    - regex: karma yoga
+    - regex: kripalu yoga
+    - regex: kriya yoga school
+    - regex: kriya yoga
+    - regex: kundalini yoga
+    - regex: raja yoga
+    - regex: sahaja yoga
+    - regex: siddha yoga
+    - regex: sivananda yoga
+    - regex: surat shabd yoga
+    - regex: tantric yoga
+    - regex: ancestor veneration in china
+    - regex: ancestor worship
+    - regex: benzhuism
+    - regex: chinese folk religion in southeast asia
+    - regex: faism
+    - regex: kam people
+    - regex: kam religion
+    - regex: maonan people
+    - regex: maonan traditional religion
+    - regex: mazu
+    - regex: mazu worship
+    - regex: mo \(religion\)
+    - regex: mo religion
+    - regex: northeast china folk religion
+    - regex: nuo folk religion
+    - regex: qiang folk religion
+    - regex: queen mother of the west
+    - regex: queen mother worship
+    - regex: shangdi
+    - regex: shangdiism
+    - regex: shen \(chinese religion\)
+    - regex: shenism
+    - regex: sui people
+    - regex: sui religion
+    - regex: tay people
+    - regex: then
+    - regex: wang ye worship
+    - regex: chinese shamanism
+    - regex: wuism
+    - regex: taoist philosophy
+    - regex: taojia
+    - regex: fajia
+    - regex: school of diplomacy
+    - regex: zonghengjia
+    - regex: huang–lao
+    - regex: mohism
+    - regex: mojia
+    - regex: school of names
+    - regex: mingjia
+    - regex: agriculturalism
+    - regex: nongjia
+    - regex: ruism
+    - regex: ruijia
+    - regex: yangism
+    - regex: school of naturalists
+    - regex: yinyangjia
+    - regex: syncretism \(chinese philosophy\)
+    - regex: zajia
+    - regex: confucian ritual religion
+    - regex: han learning
+    - regex: han learning
+    - regex: korean confucianism
+    - regex: donghak
+    - regex: lingnan confucianism
+    - regex: neo-confucianism
+    - regex: cheng–zhu school
+    - regex: cheng-zhu school
+    - regex: edo neo-confucianism
+    - regex: yangmingism
+    - regex: new confucianism
+    - regex: progressive confucianism
+    - regex: new text confucianism
+    - regex: new text
+    - regex: changzhou school of thought
+    - regex: changzhou school
+    - regex: old texts
+    - regex: old text
+    - regex: shinto
+    - regex: izumo-taishakyo
+    - regex: koshintō
+    - regex: shinbutsu-shūgō
+    - regex: shinbutsu-shugo
+    - regex: konkōkyō
+    - regex: shugendō
+    - regex: state shinto
+    - regex: yoshida shintō
+    - regex: matagi
+    - regex: matagi spirituality
+    - regex: ryukyuan religion
+    - regex: korean shamanism
+    - regex: korean shamanism
+    - regex: muism
+    - regex: gasin faith
+    - regex: korean taoism
+    - regex: quanzhen school
+    - regex: shangqing school
+    - regex: taoism in vietnam
+    - regex: vietnamese taoism
+    - regex: way of the five pecks of rice
+    - regex: way of the celestial masters
+    - regex: way of the li family
+    - regex: lijiadao
+    - regex: northern celestial masters
+    - regex: way of the northern celestial masters
+    - regex: zhengyi dao
+    - regex: way of the taiping
+    - regex: syncretic taoism
+    - regex: chongxuan school
+    - regex: dragon gate taoism
+    - regex: kōshin-shinkō
+    - regex: kōshin
+    - regex: lingbao school
+    - regex: wuliupai
+    - regex: xuanxue
+    - regex: yao taoism
+    - regex: đạo lương
+    - regex: đạo mẫu
+    - regex: thánh trần worship
+    - regex: nội đạo tràng
+    - regex: muong ethnic religion
+    - regex: ta oi people
+    - regex: ta oi animism
+    - regex: arianism
+    - regex: proto-gnosticism
+    - regex: gnosticism
+    - regex: bogomilism
+    - regex: catharism
+    - regex: cerdonians
+    - regex: cerinthus
+    - regex: ecclesia gnostica
+    - regex: johannite church
+    - regex: paulicianism
+    - regex: sethianism
+    - regex: basilideans
+    - regex: valentinianism
+    - regex: bardaisan
+    - regex: bardesanite school
+    - regex: simonians
+    - regex: marcionism
+    - regex: nicene creed
+    - regex: nicene christianity
+    - regex: thomasines
+    - regex: thomasine christianity
+    - regex: church of the east
+    - regex: ancient church of the east
+    - regex: assyrian church of the east
+    - regex: chaldean syrian church
+    - regex: eastern catholic churches
+    - regex: albanian greek catholic church
+    - regex: belarusian greek catholic church
+    - regex: bulgarian greek catholic church
+    - regex: byzantine catholic church of croatia and serbia
+    - regex: chaldean catholic church
+    - regex: greek byzantine catholic church
+    - regex: hungarian byzantine catholic church
+    - regex: italo-albanian catholic church
+    - regex: macedonian greek catholic church
+    - regex: macedonian catholic church
+    - regex: maronite church
+    - regex: melkite greek catholic church
+    - regex: romanian church united with rome, greek-catholic
+    - regex: romanian catholic church
+    - regex: russian greek catholic church
+    - regex: ruthenian greek catholic church
+    - regex: slovak greek catholic church
+    - regex: syriac catholic church
+    - regex: syro-malankara catholic church
+    - regex: syro-malabar catholic church
+    - regex: ukrainian greek catholic church
+    - regex: \(independent eastern catholic churches\)
+    - regex: ukrainian orthodox greek catholic church
+    - regex: eastern orthodox church
+    - regex: albanian orthodox church
+    - regex: bulgarian orthodox church
+    - regex: georgian orthodox church
+    - regex: greek orthodox church
+    - regex: hesychasm
+    - regex: hesychasmism
+    - regex: palamism
+    - regex: romanian orthodox church
+    - regex: russian orthodox church
+    - regex: belarusian orthodox church
+    - regex: serbian orthodox church
+    - regex: orthodox church of ukraine
+    - regex: ukrainian orthodox church
+    - regex: \(noncanonical/independent eastern orthodox churches\)
+    - regex: old calendarists
+    - regex: old believers
+    - regex: russian old believers
+    - regex: bezpopovtsy
+    - regex: popovtsy
+    - regex: oriental orthodoxy
+    - regex: oriental orthodox churches
+    - regex: armenian apostolic church
+    - regex: coptic orthodox church
+    - regex: syriac orthodox church
+    - regex: malankara jacobite syrian church
+    - regex: ethiopian orthodox church
+    - regex: eritrean orthodox church
+    - regex: malankara orthodox syrian church
+    - regex: spiritual christianity
+    - regex: doukhobor
+    - regex: khlyst
+    - regex: molokan
+    - regex: skoptsy
+    - regex: proto-protestantism
+    - regex: brethren of the free spirit
+    - regex: hussites
+    - regex: unity of the brethren \(czech republic\)
+    - regex: czech brethren
+    - regex: moravian church
+    - regex: moravians
+    - regex: lollardy
+    - regex: strigolniki
+    - regex: waldensians
+    - regex: protestantism
+    - regex: anabaptism
+    - regex: anabaptists
+    - regex: amish
+    - regex: hutterite
+    - regex: mennonite
+    - regex: river brethren
+    - regex: schwarzenau brethren
+    - regex: shakers
+    - regex: anglicanism
+    - regex: anglo-catholicism
+    - regex: anglican papalism
+    - regex: broad church
+    - regex: continuing anglican movement
+    - regex: english dissenters
+    - regex: evangelical anglicanism
+    - regex: nonconformist \(protestantism\)
+    - regex: nonconformists
+    - regex: puritans
+    - regex: fifth monarchists
+    - regex: radical orthodoxy
+    - regex: baptists
+    - regex: general baptists
+    - regex: free will baptist
+    - regex: landmarkism
+    - regex: missionary baptists
+    - regex: primitive baptists
+    - regex: strict baptists
+    - regex: reformed baptists
+    - regex: black church
+    - regex: black theology
+    - regex: christian deism
+    - regex: confessing movement
+    - regex: evangelicalism
+    - regex: charismatic movement
+    - regex: charismatic movement
+    - regex: emerging church
+    - regex: german christians \(movement\)
+    - regex: neo-charismatic movement
+    - regex: neo-evangelicalism
+    - regex: new apostolic reformation
+    - regex: plymouth brethren
+    - regex: exclusive brethren
+    - regex: open brethren
+    - regex: progressive christianity
+    - regex: christian fundamentalism
+    - regex: protestant fundamentalism
+    - regex: jesuism
+    - regex: lutheranism
+    - regex: evangelical catholic
+    - regex: laestadianism
+    - regex: neo-lutheranism
+    - regex: pietism
+    - regex: methodism
+    - regex: calvinistic methodists
+    - regex: holiness movement
+    - regex: church of the nazarene
+    - regex: the salvation army
+    - regex: wesleyanism
+    - regex: pentecostalism
+    - regex: church of god \(cleveland, tennessee\)
+    - regex: church of god
+    - regex: latter rain \(post–world war ii movement\)
+    - regex: latter rain movement
+    - regex: oneness pentecostalism
+    - regex: word of faith
+    - regex: quakers
+    - regex: calvinism
+    - regex: reformed churches
+    - regex: amyraldism
+    - regex: arminianism
+    - regex: remonstrants
+    - regex: christian reconstructionism
+    - regex: congregational churches
+    - regex: continental reformed churches
+    - regex: swiss reformed
+    - regex: dutch reformed church
+    - regex: dutch reformed
+    - regex: huguenot
+    - regex: french huguenot
+    - regex: neo-calvinism
+    - regex: new calvinism
+    - regex: presbyterianism
+    - regex: zwinglianism
+    - regex: reformed eastern christianity
+    - regex: restoration movement
+    - regex: restoration movement
+    - regex: adventism
+    - regex: seventh-day adventist church
+    - regex: christadelphians
+    - regex: churches of christ
+    - regex: cooneyites
+    - regex: iglesia ni cristo
+    - regex: bible student movement
+    - regex: jehovah's witnesses
+    - regex: free bible students
+    - regex: friends of man
+    - regex: latter day saint movement
+    - regex: the church of jesus christ of latter-day saints
+    - regex: community of christ
+    - regex: mormon fundamentalism
+    - regex: millerism
+    - regex: campbellite
+    - regex: stone-campbell movement
+    - regex: two by twos
+    - regex: swedenborgianism
+    - regex: unitarianism
+    - regex: roman catholic church
+    - regex: anglican ordinariate
+    - regex: anglican ordinariate catholics
+    - regex: catholic charismatic renewal
+    - regex: charismatic catholics
+    - regex: civil constitution of the clergy
+    - regex: gallicanism
+    - regex: hebrew catholics
+    - regex: independent catholic churches
+    - regex: old catholic church
+    - regex: polish national catholic church
+    - regex: liberal catholicism
+    - regex: liberation theology
+    - regex: modernism \(roman catholicism\)
+    - regex: modernist catholics
+    - regex: traditionalist catholic
+    - regex: sedevacantism
+    - regex: palmarian catholic church
+    - regex: sedeprivationism
+    - regex: ultramontanism
+    - regex: aymara people
+    - regex: aymara spirituality
+    - regex: bagnolians
+    - regex: esoteric christianity
+    - regex: martinism
+    - regex: theosophy \(boehmian\)
+    - regex: christian theosophy
+    - regex: christianity and neopaganism
+    - regex: christopaganism
+    - regex: christianity and neopaganism
+    - regex: christian wicca
+    - regex: god worshipping society
+    - regex: judaizers
+    - regex: christian kabbalah
+    - regex: hebrew roots
+    - regex: makuya
+    - regex: messianic judaism
+    - regex: sacred name movement
+    - regex: subbotniks
+    - regex: yehowists
+    - regex: lisu christianity
+    - regex: lisu
+    - regex: raramuri
+    - regex: raramuri religion
+    - regex: spiritual baptist
+    - regex: xueta christianity
+    - regex: xueta
+    - regex: yaqui people
+    - regex: yaqui religion
+    - regex: american civil religion
+    - regex: american civil religion
+    - regex: bosnian church
+    - regex: christian universalism
+    - regex: nondenominational christianity
+    - regex: nontrinitarianism
+    - regex: tolstoyan movement
+    - regex: islamic schools and branches
+    - regex: ilm al-kalam
+    - regex: ahl al-hadith
+    - regex: azariqa
+    - regex: azraqi
+    - regex: haruriyyah
+    - regex: ibadi
+    - regex: najdat
+    - regex: sufri
+    - regex: shia islam
+    - regex: alevism
+    - regex: alians
+    - regex: bektashi order
+    - regex: bektashism
+    - regex: kurdish alevism
+    - regex: alawites
+    - regex: isma'ilism
+    - regex: mustaali
+    - regex: dawoodi bohra
+    - regex: alavi bohra
+    - regex: atba-i-malak
+    - regex: atba-i-malak badar
+    - regex: atba-i-malak vakil
+    - regex: hebtiahs bohra
+    - regex: progressive dawoodi bohra
+    - regex: sulaymani
+    - regex: nizari
+    - regex: twelver
+    - regex: ja'fari jurisprudence
+    - regex: akhbari
+    - regex: shaykhism
+    - regex: usuli
+    - regex: zaidiyyah
+    - regex: jarudiyah
+    - regex: batriyya
+    - regex: sufism
+    - regex: bektashi order
+    - regex: chishti order
+    - regex: kubrawiya
+    - regex: ma laichi
+    - regex: khufiyya
+    - regex: mevlevi order
+    - regex: mouride
+    - regex: naqshbandi
+    - regex: jahriyya
+    - regex: ni'matullāhī
+    - regex: qadiriyya
+    - regex: roshani movement
+    - regex: roshani
+    - regex: shadhili
+    - regex: suhrawardiyya
+    - regex: sufi order international
+    - regex: tijaniyyah
+    - regex: universal sufism
+    - regex: sunni islam
+    - regex: kalam
+    - regex: ash'ari
+    - regex: maliki
+    - regex: shafi'i
+    - regex: hanbali
+    - regex: maturidi
+    - regex: hanafi
+    - regex: barelvi
+    - regex: deobandi
+    - regex: gedimu
+    - regex: athari
+    - regex: salafi
+    - regex: madkhalism
+    - regex: wahhabism
+    - regex: ahle hadith
+    - regex: islamism
+    - regex: islamic modernism
+    - regex: muʿtazila
+    - regex: satpanth
+    - regex: syncretic
+    - regex: ali-illahism
+    - regex: din-i ilahi
+    - regex: nuristanis
+    - regex: kafirism
+    - regex: wetu telu
+    - regex: other
+    - regex: ahmadiyya
+    - regex: european islam
+    - regex: jadid
+    - regex: liberal movements within islam
+    - regex: mahdavia
+    - regex: mahdist state
+    - regex: mahdist movement
+    - regex: quranism
+    - regex: riaz ahmed gohar shahi
+    - regex: messiah foundation international
+    - regex: judaism
+    - regex: kabbalah
+    - regex: kabbalah
+    - regex: non-rabbinic judaism
+    - regex: haymanot
+    - regex: karaite judaism
+    - regex: qemant people
+    - regex: qemant judaism
+    - regex: samaritanism
+    - regex: rabbinic judaism
+    - regex: conservative judaism
+    - regex: humanistic judaism
+    - regex: jewish renewal
+    - regex: orthodox judaism
+    - regex: haredi judaism
+    - regex: dor daim
+    - regex: hardal
+    - regex: hasidic judaism
+    - regex: misnagdim
+    - regex: sephardic haredi
+    - regex: modern orthodox judaism
+    - regex: religious zionism
+    - regex: reconstructionist judaism
+    - regex: reform judaism
+    - regex: historical judaism
+    - regex: essenes
+    - regex: bana'im
+    - regex: hemerobaptists
+    - regex: maghāriya
+    - regex: nazarene \(sect\)
+    - regex: nasoraeans
+    - regex: hypsistarians
+    - regex: hypsistarianism
+    - regex: pharisees
+    - regex: sadducees
+    - regex: zealots \(judea\)
+    - regex: sicarii
+    - regex: jewish christian
+    - regex: messianic sects
+    - regex: ebionites
+    - regex: elcesaites
+    - regex: nazarene \(sect\)
+    - regex: nazarenes
+    - regex: sabbateans
+    - regex: frankism
+    - regex: second temple judaism
+    - regex: frankism
+    - regex: babism
+    - regex: azali
+    - regex: baha'i faith
+    - regex: caravan of east and west
+    - regex: attempted schisms in the baháʼí faith
+    - regex: free baha'is
+    - regex: orthodox baha'i faith
+    - regex: druze
+    - regex: druze faith
+    - regex: mandaeism
+    - regex: iranian religions
+    - regex: athinganoi
+    - regex: chinese manichaeism
+    - regex: ishikism
+    - regex: shabakism
+    - regex: yarsani
+    - regex: yazidism
+    - regex: behafarid
+    - regex: ilm-e-khshnoom
+    - regex: khurramites
+    - regex: mazdakism
+    - regex: mazdaznan
+    - regex: zurvanism
+    - regex: paganism
+    - regex: animism
+    - regex: totemism
+    - regex: shamanism
+    - regex: fetishism
+    - regex: kung people
+    - regex: abwoi religion
+    - regex: acholi people
+    - regex: acholi religion
+    - regex: afizere
+    - regex: afizere traditional religion
+    - regex: akan religion
+    - regex: asase ya/afua
+    - regex: asante religion
+    - regex: zande people
+    - regex: azande traditional religion
+    - regex: bafia people
+    - regex: bafia religion
+    - regex: baka people \(cameroon and gabon\)
+    - regex: baka traditional religion
+    - regex: bantu mythology
+    - regex: bantu religion
+    - regex: kisii people
+    - regex: abagusii religion
+    - regex: kamba people
+    - regex: akamba traditional religion
+    - regex: amampondomise
+    - regex: amampondomise traditional religion
+    - regex: badimo
+    - regex: balondo civilization
+    - regex: balondo religion
+    - regex: baluba mythology
+    - regex: baluba religion
+    - regex: bamileke people
+    - regex: bamileke religion
+    - regex: bamum people
+    - regex: bamum traditional religion
+    - regex: banyole
+    - regex: banyole traditional beliefs
+    - regex: bubi people
+    - regex: bubi spirituality
+    - regex: bushongo mythology
+    - regex: bushongo religion
+    - regex: bwiti
+    - regex: chaga people
+    - regex: chaga faith
+    - regex: chokwe people
+    - regex: chokwe spiritual beliefs
+    - regex: duala people
+    - regex: duala traditional religion
+    - regex: fipa people
+    - regex: fipa religion
+    - regex: furiiru people
+    - regex: furiiru traditional religion
+    - regex: giriama people
+    - regex: giriama traditional religion
+    - regex: herero people
+    - regex: herero traditional faith
+    - regex: himba people
+    - regex: himba religion
+    - regex: kikuyu people
+    - regex: kikuyu traditional religion
+    - regex: kongo religion
+    - regex: kwe people
+    - regex: kwe faith
+    - regex: lozi mythology
+    - regex: lozi religion
+    - regex: luvale people
+    - regex: luvale religion
+    - regex: makua people
+    - regex: makua traditional religion
+    - regex: mbole people
+    - regex: mbole religion
+    - regex: nyakyusa people
+    - regex: nyakyusa religion
+    - regex: ovambo people
+    - regex: ovambo traditional religion
+    - regex: pedi people
+    - regex: pedi traditional religion
+    - regex: songye
+    - regex: songye religion
+    - regex: suku people
+    - regex: suku religion
+    - regex: swazi people
+    - regex: swazi traditional religion
+    - regex: tonga people \(malawi\)
+    - regex: tonga religion
+    - regex: tsonga people
+    - regex: tsonga traditional religion
+    - regex: tumbuka mythology
+    - regex: tumbuka religion
+    - regex: xhosa people
+    - regex: xhosa traditional religion
+    - regex: zulu traditional religion
+    - regex: baoule people
+    - regex: baoule traditional religion
+    - regex: bari people
+    - regex: bari traditional religion
+    - regex: bassa people \(liberia\)
+    - regex: bassa traditional religion
+    - regex: pojulu people
+    - regex: biri traditional religion
+    - regex: bobo people
+    - regex: bobo religion
+    - regex: hausa animism
+    - regex: bori
+    - regex: bwa people
+    - regex: bwa religion
+    - regex: chamba people
+    - regex: chamba traditional religion
+    - regex: dahomean religion
+    - regex: damara people
+    - regex: damara religion
+    - regex: dan people
+    - regex: dan religion
+    - regex: dinka religion
+    - regex: dogon people
+    - regex: dogon religion
+    - regex: ebira people
+    - regex: ebira traditional religion
+    - regex: edo people
+    - regex: edo traditional religion
+    - regex: efik mythology
+    - regex: efik religion
+    - regex: ekoi mythology
+    - regex: ekoi religion
+    - regex: esan people
+    - regex: esan traditional religion
+    - regex: fali people
+    - regex: fali traditional religion
+    - regex: frafra people
+    - regex: frafra beliefs
+    - regex: gbagyi people
+    - regex: gbagyi traditional religion
+    - regex: hadza people
+    - regex: hadza religion
+    - regex: babur and bura people
+    - regex: hyel
+    - regex: idoma people
+    - regex: idoma traditional religion
+    - regex: ijaw people
+    - regex: ijaw traditional religion
+    - regex: ibibio people
+    - regex: inam
+    - regex: jola people
+    - regex: jola traditional religion
+    - regex: kalenjin mythology
+    - regex: asisian religion
+    - regex: khoekhoe
+    - regex: khoekhoen religion
+    - regex: kissi people
+    - regex: kissi traditional religion
+    - regex: kono people
+    - regex: kono traditional religion
+    - regex: koore people
+    - regex: koore religion
+    - regex: krahn people
+    - regex: krahn religion
+    - regex: kuku people
+    - regex: kuku traditional beliefs
+    - regex: lobi people
+    - regex: lobi animism
+    - regex: lotuko mythology
+    - regex: lotuko ethnic religion
+    - regex: lugbara mythology
+    - regex: lugbara religion
+    - regex: maasai mythology
+    - regex: maasai religion
+    - regex: madi people
+    - regex: madi traditional religion
+    - regex: manjak people
+    - regex: manjak religion
+    - regex: mbuti mythology
+    - regex: mbuti religion
+    - regex: moba people
+    - regex: moba ethnic religion
+    - regex: mursi people
+    - regex: mursi animism
+    - regex: nso people
+    - regex: nso religion
+    - regex: nuer people
+    - regex: nuer religion
+    - regex: nyongo society
+    - regex: nyongo society
+    - regex: bakossi people
+    - regex: bakossi beliefs
+    - regex: odinani
+    - regex: odinala / odinani
+    - regex: oropom people
+    - regex: oropom religion
+    - regex: safwa people
+    - regex: safwa religion
+    - regex: samburu people
+    - regex: samburu religion
+    - regex: san religion
+    - regex: serer religion
+    - regex: sidama people
+    - regex: sidama religion
+    - regex: surma people
+    - regex: surma religion
+    - regex: tammari people
+    - regex: tammari traditional religion
+    - regex: temne people
+    - regex: temne traditional religion
+    - regex: traditional berber religion
+    - regex: turkana people
+    - regex: turkana traditional religion
+    - regex: urhobo people
+    - regex: urhobo traditional religion
+    - regex: west african vodun
+    - regex: vodun
+    - regex: waaqeffanna
+    - regex: yoruba religion
+    - regex: ifá
+    - regex: indigenous religion in zimbabwe
+    - regex: shona people
+    - regex: shona traditional religion
+    - regex: abakuá
+    - regex: arará
+    - regex: arara religion
+    - regex: candomblé
+    - regex: candomblé bantu
+    - regex: candomblé jejé
+    - regex: candomblé ketu
+    - regex: comfa
+    - regex: convince
+    - regex: cuban vodú
+    - regex: dominican vudú
+    - regex: espiritismo
+    - regex: haitian vodou
+    - regex: hoodoo \(folk magic\)
+    - regex: hoodoo
+    - regex: kélé
+    - regex: kumina
+    - regex: louisiana voodoo
+    - regex: montamentu
+    - regex: myal
+    - regex: obeah
+    - regex: palo \(religion\)
+    - regex: palo
+    - regex: quimbanda
+    - regex: santería
+    - regex: tambor de mina
+    - regex: trinidad orisha
+    - regex: umbanda
+    - regex: winti
+    - regex: saramaka
+    - regex: saramaka religion
+    - regex: evenks
+    - regex: evenki shamanism
+    - regex: manchu shamanism
+    - regex: turkic mythology
+    - regex: turko
+    - regex: altai people
+    - regex: altaic shamanism
+    - regex: burkhanism
+    - regex: dukha people
+    - regex: dukha shamanism
+    - regex: mongolian shamanism
+    - regex: black shamanism
+    - regex: black shamanism
+    - regex: tengrism
+    - regex: aiyy faith
+    - regex: aiyy
+    - regex: tengir ordo
+    - regex: vattisen yaly
+    - regex: nanai people
+    - regex: nanai shamanism
+    - regex: oroqen people
+    - regex: oroqen shamanism
+    - regex: shors
+    - regex: shor shamanism
+    - regex: soyot
+    - regex: soyot shamanism
+    - regex: ulch people
+    - regex: ulch shamanism
+    - regex: yakut shamanism
+    - regex: yakut shamanism
+    - regex: ache people
+    - regex: ache traditional tribal religion
+    - regex: achuar
+    - regex: achuar religious beliefs
+    - regex: acoma pueblo
+    - regex: acoma traditional religion
+    - regex: aguaruna people
+    - regex: aguaruna traditional beliefs
+    - regex: akawaio people
+    - regex: akawaio religion
+    - regex: alaska native religion
+    - regex: inuit religion
+    - regex: tanana athabaskans
+    - regex: tanana shamanism
+    - regex: yup'ik
+    - regex: yupik shamanism
+    - regex: siberian yupik
+    - regex: yuit shamanism
+    - regex: sirenik eskimos
+    - regex: sirenik shamanism
+    - regex: basketmaker iii era
+    - regex: ancestral pueblo religion \(basketmaker iii\)
+    - regex: andoque people
+    - regex: andoque religion
+    - regex: anishinaabe traditional beliefs
+    - regex: ojibwe
+    - regex: ojibwe spirituality
+    - regex: apache
+    - regex: apache traditional tribal religion
+    - regex: arhuaco people
+    - regex: arhuaco spirituality
+    - regex: atacama people
+    - regex: atacama religious culture
+    - regex: blackfoot religion
+    - regex: bororo
+    - regex: bororo totemism
+    - regex: caddo
+    - regex: caddo religion
+    - regex: traditional narratives \(native california\)
+    - regex: californian traditional religions
+    - regex: achomawi people
+    - regex: achomawi religion
+    - regex: acjachemen
+    - regex: acjachemen religion
+    - regex: kuksu \(religion\)
+    - regex: kuksu
+    - regex: cahto
+    - regex: cahto religion
+    - regex: esselen
+    - regex: esselen spirituality
+    - regex: miwok mythology
+    - regex: miwok religion
+    - regex: ohlone mythology
+    - regex: ohlone spirituality
+    - regex: pomo religion
+    - regex: northern paiute people
+    - regex: northern paiute shamanism
+    - regex: mohave people
+    - regex: mohave religion
+    - regex: wiyot
+    - regex: wiyot spirituality
+    - regex: calusa
+    - regex: calusa native religion
+    - regex: chaná mythology
+    - regex: chaná religion
+    - regex: cherokee mythology
+    - regex: cherokee spiritual beliefs
+    - regex: choctaw mythology
+    - regex: choctaw religion
+    - regex: creek mythology
+    - regex: creek religion
+    - regex: croatan
+    - regex: croatan religious beliefs
+    - regex: crow religion
+    - regex: fuegians
+    - regex: fuegian spirituality
+    - regex: selk'nam mythology
+    - regex: selk'nam religion
+    - regex: garifuna
+    - regex: garifuna spirituality
+    - regex: guarani mythology
+    - regex: guarani religion
+    - regex: guarayos
+    - regex: guarayos traditional religious beliefs
+    - regex: guayupe
+    - regex: guayupe traditional religion
+    - regex: gwich'in people
+    - regex: gwich'in traditional beliefs
+    - regex: haida mythology
+    - regex: haida religion
+    - regex: ho-chunk mythology
+    - regex: ho-chunk religion
+    - regex: hopi mythology
+    - regex: hopi religion
+    - regex: huaorani people
+    - regex: huaorani traditional animism
+    - regex: hupda people
+    - regex: hupda cosmgony
+    - regex: religion in the inca empire
+    - regex: incan religion
+    - regex: chavin culture
+    - regex: chauvin religion
+    - regex: nazca culture
+    - regex: nazca religious beliefs
+    - regex: wari' people
+    - regex: wari' beliefs
+    - regex: illinois confederacy
+    - regex: illinois religion
+    - regex: innu
+    - regex: innu religion
+    - regex: iroquois mythology
+    - regex: iroquois religion
+    - regex: mohawk people
+    - regex: mohawk traditional religion
+    - regex: seneca mythology
+    - regex: seneca religion
+    - regex: wyandot religion
+    - regex: jivaroan peoples
+    - regex: jivaroan religion
+    - regex: karankawa people
+    - regex: karankawa indigenous religion
+    - regex: kayabi people
+    - regex: kayabi traditional tribal religion
+    - regex: kalapalo people
+    - regex: kalapalo beliefs
+    - regex: kalinago
+    - regex: kalinago religion
+    - regex: kogi people
+    - regex: kogi traditional religion
+    - regex: kuikuro
+    - regex: kuikoro religion
+    - regex: kwakwakaʼwakw mythology
+    - regex: kwakwakaʼwakw religion
+    - regex: lakota mythology
+    - regex: lakota religion
+    - regex: lenape mythology
+    - regex: lenape religion
+    - regex: lokono
+    - regex: lokono animist spirituality
+    - regex: maleku people
+    - regex: maleku animism
+    - regex: mandan
+    - regex: mandan religion
+    - regex: mapuche religion
+    - regex: marajoara
+    - regex: marajoara religion
+    - regex: matses
+    - regex: matses animism
+    - regex: mesoamerican religion
+    - regex: aztec religion
+    - regex: cora people
+    - regex: cora religion
+    - regex: huichol people
+    - regex: huichol traditional religion
+    - regex: maya religion
+    - regex: chuj people
+    - regex: chuj traditional beliefs
+    - regex: huastec civilization
+    - regex: huastec religion
+    - regex: lacandon people
+    - regex: lacandon traditional beliefs
+    - regex: mazatec
+    - regex: mazatec traditional religion
+    - regex: maximón
+    - regex: maximon
+    - regex: mopan people
+    - regex: mopan traditional religion
+    - regex: pech people
+    - regex: pech traditional religion
+    - regex: q'eqchi'
+    - regex: q'eqchi' religion
+    - regex: tzeltal people
+    - regex: tzeltal religion
+    - regex: tzotzil
+    - regex: tzotzil native religion
+    - regex: tzʼutujil people
+    - regex: tzʼutujil traditional religion
+    - regex: mixe people
+    - regex: mixe religion
+    - regex: nagual
+    - regex: nagualism
+    - regex: olmec religion
+    - regex: purépecha religion
+    - regex: teotihuacan
+    - regex: teotihuacan religion
+    - regex: tepehuan
+    - regex: tepehuan religious beliefs
+    - regex: tlapanec people
+    - regex: tlapanec religion
+    - regex: totonac
+    - regex: totonac traditional religion
+    - regex: zapotec civilization
+    - regex: zapotec religion
+    - regex: midewiwin
+    - regex: abenaki mythology
+    - regex: abenaki religious beliefs
+    - regex: mi'kmaq
+    - regex: mi'kmaq traditional religion
+    - regex: miskito people
+    - regex: old miskito religion
+    - regex: muisca religion
+    - regex: muzo people
+    - regex: muzo traditional religion
+    - regex: navajo
+    - regex: navajo spirituality
+    - regex: nuu-chah-nulth mythology
+    - regex: nuu-chah-nulth religion
+    - regex: omaha people
+    - regex: omaha religion
+    - regex: osage nation
+    - regex: osage traditional spirituality
+    - regex: pawnee mythology
+    - regex: pawnee religion
+    - regex: parakanã people
+    - regex: parakanã shamanism
+    - regex: pech people
+    - regex: pech traditional religion
+    - regex: pemon people
+    - regex: pemon traditional tribal religion
+    - regex: penobscot
+    - regex: penobscot spirituality
+    - regex: pericues
+    - regex: pericues religion
+    - regex: piaroa people
+    - regex: piaroa traditional religion
+    - regex: tsenacommacah
+    - regex: powhatan native religion
+    - regex: puruhá
+    - regex: puruhá traditional religion
+    - regex: q'ero
+    - regex: q'ero spirituality
+    - regex: quechua people
+    - regex: quechua traditional beliefs
+    - regex: rikbaktsa people
+    - regex: rikbaktsa traditional beliefs
+    - regex: salishan oral narratives
+    - regex: salish narratives
+    - regex: seminole
+    - regex: seminole traditional native religion
+    - regex: seri people
+    - regex: seri religion
+    - regex: shuar
+    - regex: shuar shamanism
+    - regex: southeastern ceremonial complex
+    - regex: taensa
+    - regex: taensa native tribal religion
+    - regex: taíno
+    - regex: taino spirituality
+    - regex: tairona
+    - regex: tairona religion
+    - regex: talamancan mythology
+    - regex: talamancan religion
+    - regex: tapirape people
+    - regex: tapirape shamanism
+    - regex: tehuelche people
+    - regex: tehuelche beliefs
+    - regex: ticuna
+    - regex: ticuna shamanism
+    - regex: toba people
+    - regex: toba belief system
+    - regex: philosophy and religion of the tlingit
+    - regex: tlingit religion
+    - regex: tsimshian mythology
+    - regex: tsimshian religion
+    - regex: ute mythology
+    - regex: ute religion
+    - regex: wai-wai people
+    - regex: wai-wai religion
+    - regex: wapishana
+    - regex: wapishana religion
+    - regex: warao people
+    - regex: warao traditional beliefs
+    - regex: wayuu people
+    - regex: wayuu religion
+    - regex: yaruro
+    - regex: yaruro traditional tribal religion
+    - regex: zuni mythology
+    - regex: zuni religion
+    - regex: asur people
+    - regex: asur religion
+    - regex: birhor people
+    - regex: birhor traditional religion
+    - regex: bru people
+    - regex: bru religion
+    - regex: khasi people
+    - regex: ka niam khasi
+    - regex: mon people
+    - regex: mon religion
+    - regex: nicobarese people
+    - regex: nicobarese traditional religion
+    - regex: pnar people
+    - regex: ka niamtre
+    - regex: pacoh people
+    - regex: paoch animism
+    - regex: santal people
+    - regex: santal religion
+    - regex: sarnaism
+    - regex: senoi
+    - regex: senoi ethnic religion
+    - regex: sora people
+    - regex: sora traditional beliefs
+    - regex: tampuan people
+    - regex: tampuan animism
+    - regex: kawas \(mythology\)
+    - regex: amis native religion
+    - regex: aliran kepercayaan
+    - regex: kenyah people
+    - regex: adat pu'un
+    - regex: torajan people
+    - regex: aluk
+    - regex: parmalim
+    - regex: batak parmalim
+    - regex: dayak people
+    - regex: dayak religion
+    - regex: kaharingan
+    - regex: savu people
+    - regex: jingi tiu
+    - regex: kejawèn
+    - regex: kapitayan
+    - regex: kangeanese people
+    - regex: kangeanese religion
+    - regex: pemena
+    - regex: karo pemena
+    - regex: kendayan people
+    - regex: kendayan religion
+    - regex: marapu
+    - regex: rejang people
+    - regex: rejang religion
+    - regex: rotenese people
+    - regex: rotenese religion
+    - regex: saminism movement
+    - regex: sangirese people
+    - regex: sangirese religion
+    - regex: sumbawa people
+    - regex: sumbawa religion
+    - regex: sunda wiwitan
+    - regex: sundanese wiwitan
+    - regex: tolotang
+    - regex: wai apu people
+    - regex: wai apu religion
+    - regex: indigenous religious beliefs of the philippines
+    - regex: dayawism
+    - regex: batak people \(philippines\)
+    - regex: batak folk religion
+    - regex: bicolano people
+    - regex: bicolano religion
+    - regex: blaan people
+    - regex: blaan folk religion
+    - regex: capiznon people
+    - regex: capiznon folk religion
+    - regex: cuyunon people
+    - regex: cuyunon folk religion
+    - regex: gaddang people
+    - regex: gaddang folk religion
+    - regex: ifugao people
+    - regex: ifugao folk religion
+    - regex: ilocano people
+    - regex: ilocano folk religion
+    - regex: itneg people
+    - regex: itneg folk religion
+    - regex: kalinga people
+    - regex: kalinga folk religion
+    - regex: kankanaey people
+    - regex: kankanaey folk religion
+    - regex: karay-a people
+    - regex: karay-a folk religion
+    - regex: mangyan people
+    - regex: mangyan folk religion
+    - regex: palawan people
+    - regex: palawan folk religion
+    - regex: pangasinan people
+    - regex: pangasinan folk religion
+    - regex: sama-bajau
+    - regex: sama bajau folk religion
+    - regex: sambal people
+    - regex: sambal folk religion
+    - regex: subanon people
+    - regex: subanon folk religion
+    - regex: indigenous religious beliefs of the tagalog people
+    - regex: tagalog folk religion
+    - regex: indigenous religious beliefs of the tagbanwa people
+    - regex: tagbanwa folk religion
+    - regex: tboli people
+    - regex: tboli folk religion
+    - regex: teduray people
+    - regex: teduray folk religion
+    - regex: visayans
+    - regex: visayan folk religion
+    - regex: malagasy mythology
+    - regex: fomba gasy
+    - regex: jarai people
+    - regex: jarai religion
+    - regex: kanakanavu people
+    - regex: kanakanavu native religion
+    - regex: malaysian folk religion
+    - regex: datuk keramat
+    - regex: jakun people
+    - regex: jakun religion
+    - regex: iban people
+    - regex: pengarap iban
+    - regex: melanau people
+    - regex: melanau religion
+    - regex: momolianism
+    - regex: murut people
+    - regex: murut religion
+    - regex: orang kanaq
+    - regex: orang kanaq religion
+    - regex: orang seletar
+    - regex: orang seletar religion
+    - regex: semai people
+    - regex: semai religion
+    - regex: semaq beri people
+    - regex: semaq beri religion
+    - regex: temuan people
+    - regex: temuan religion
+    - regex: micronesian mythology
+    - regex: micronesian religion
+    - regex: carolinian people
+    - regex: carolinian religion
+    - regex: chamorro people
+    - regex: chamorro religion
+    - regex: chuukese people
+    - regex: chuukese religion
+    - regex: nauruan indigenous religion
+    - regex: polynesian narrative
+    - regex: cook islands mythology
+    - regex: cook islands narrative
+    - regex: hawaiian religion
+    - regex: mangarevan narrative
+    - regex: māori religion
+    - regex: niuean mythology
+    - regex: niuean narrative
+    - regex: rapa nui mythology
+    - regex: rapa nui narrative
+    - regex: samoan mythology
+    - regex: samoan narrative
+    - regex: tahiti and society islands mythology
+    - regex: tahitian narrative
+    - regex: tongan religion
+    - regex: tongan narrative
+    - regex: tuvaluan mythology
+    - regex: tuvaluan narrative
+    - regex: puyuma pulingaw
+    - regex: paiwan shamanism
+    - regex: sakizaya people
+    - regex: sakizaya native religion
+    - regex: taivoan people
+    - regex: taivoan animism
+    - regex: tao people
+    - regex: tao native religion
+    - regex: circassian paganism
+    - regex: khabzeism
+    - regex: vainakh religion
+    - regex: khonds
+    - regex: khond traditional religion
+    - regex: gondi people
+    - regex: koyapunem
+    - regex: sauria paharia people
+    - regex: sauria paharia religion
+    - regex: tamil mythology
+    - regex: tamil religion
+    - regex: toda people
+    - regex: toda religion
+    - regex: kalash people
+    - regex: kalashism
+    - regex: nagpuria people
+    - regex: nagpuria religion
+    - regex: ossetian mythology
+    - regex: ossetian native religion
+    - regex: folk practices in punjab
+    - regex: punjabi folk religion
+    - regex: tharu people
+    - regex: tharu religionaustralian aboriginal religion and mythology
+    - regex: australian aboriginal spirituality
+    - regex: gamilaraay
+    - regex: gamilaraay dreaming
+    - regex: larrakia people
+    - regex: larrakia dreaming
+    - regex: aboriginal tasmanians
+    - regex: tasmanian aboriginal spirituality
+    - regex: religion in fiji
+    - regex: fijian ancient religion
+    - regex: kanak people
+    - regex: kanak traditional beliefs
+    - regex: papuan mythology
+    - regex: papuan religion
+    - regex: dumo people
+    - regex: dumo spirituality
+    - regex: fore people
+    - regex: fore traditional beliefs
+    - regex: kaluli people
+    - regex: kaluli religion
+    - regex: korowai people
+    - regex: korowai religion
+    - regex: trobriand people
+    - regex: trobriand traditional beliefs
+    - regex: urapmin people
+    - regex: urapmin traditional beliefs
+    - regex: aeta people
+    - regex: aeta religion
+    - regex: ati people
+    - regex: ati animism
+    - regex: onge people
+    - regex: onge native religion
+    - regex: semang
+    - regex: semang animism
+    - regex: vedda
+    - regex: vedda original religion
+    - regex: ainu people
+    - regex: ainu religion
+    - regex: koryaks
+    - regex: koryak religion
+    - regex: itelmens
+    - regex: itelmen religion
+    - regex: nivkh people
+    - regex: nivkh traditional religion
+    - regex: yukaghir people
+    - regex: yukaghir shamanism
+    - regex: banrawats
+    - regex: banrawat religion
+    - regex: bathouism
+    - regex: biate people
+    - regex: biate animism
+    - regex: bimoism
+    - regex: bon
+    - regex: dongba
+    - regex: pumi people
+    - regex: hangui
+    - regex: burmese folk religion
+    - regex: lisu people
+    - regex: lisu religion
+    - regex: chang naga
+    - regex: chang naga animism
+    - regex: chutia people
+    - regex: chutia religion
+    - regex: mosuo
+    - regex: daba
+    - regex: pumi people
+    - regex: dingba
+    - regex: donyi-polo
+    - regex: garo people
+    - regex: sangsarek
+    - regex: gurung shamanism
+    - regex: hani people
+    - regex: hani religion
+    - regex: mizo religion
+    - regex: hnam sakhua
+    - regex: kayan people \(myanmar\)
+    - regex: kan khwan
+    - regex: karbi people
+    - regex: karbi animism
+    - regex: karen people
+    - regex: karen animism
+    - regex: jingpo people
+    - regex: jingpo religion
+    - regex: kirat mundhum
+    - regex: kiratism
+    - regex: maring people
+    - regex: maring beliefs
+    - regex: miji people
+    - regex: miji animism
+    - regex: mizo religion
+    - regex: mro-khimi people
+    - regex: mro religion
+    - regex: hruso people
+    - regex: nyezi-no
+    - regex: reang
+    - regex: reang religion
+    - regex: sanamahism
+    - regex: tangsa naga
+    - regex: tangsa naga animism
+    - regex: toto people
+    - regex: toto nature religion
+    - regex: akha people
+    - regex: zahv
+    - regex: hlai people
+    - regex: hlai animism
+    - regex: miao folk religion
+    - regex: kev dab kev qhuas
+    - regex: pa then people
+    - regex: pa then religion
+    - regex: qabiao people
+    - regex: qabiao religion
+    - regex: tai folk religion
+    - regex: satsana phi
+    - regex: ahom religion
+    - regex: giay people
+    - regex: giay animism
+    - regex: tai folk religion
+    - regex: lamet religion
+    - regex: nung people
+    - regex: nung religion
+    - regex: saek people
+    - regex: saek religion
+    - regex: komi mythology
+    - regex: komi shamanism
+    - regex: mari native religion
+    - regex: fugara
+    - regex: beduin shamanism
+    - regex: john frum
+    - regex: johnson cult
+    - regex: prince philip movement
+    - regex: vailala madness
+    - regex: african zionism
+    - regex: ausar auset society
+    - regex: black muslims
+    - regex: american society of muslims
+    - regex: dini ya msambwa
+    - regex: five-percent nation
+    - regex: godianism
+    - regex: igbe religion
+    - regex: moorish science temple of america
+    - regex: moorish orthodox church of america
+    - regex: mumboism
+    - regex: nation of islam
+    - regex: united nation of islam
+    - regex: nuwaubian nation
+    - regex: black hebrew israelites
+    - regex: african hebrew israelites of jerusalem
+    - regex: church of god and saints of christ
+    - regex: commandment keepers
+    - regex: israelite church of god in jesus christ
+    - regex: israelite school of universal practical knowledge
+    - regex: nation of yahweh
+    - regex: one west camp
+    - regex: rastafari
+    - regex: bobo ashanti
+    - regex: nyabinghi
+    - regex: twelve tribes of israel \(rastafari\)
+    - regex: twelve tribes of israel
+    - regex: ariosophy
+    - regex: british israelism
+    - regex: christian identity
+    - regex: creativity \(religion\)
+    - regex: creativity
+    - regex: french israelism
+    - regex: nordic israelism
+    - regex: wotansvolk
+    - regex: ghost dance
+    - regex: indian shaker church
+    - regex: longhouse religion
+    - regex: mexicayotl
+    - regex: peyote meetings
+    - regex: native american religions
+    - regex: wasshat religionantoinism
+    - regex: beili wang
+    - regex: branch davidians
+    - regex: nigerian chrislam
+    - regex: chrislam
+    - regex: eastern lightning
+    - regex: milah abraham
+    - regex: gafatar
+    - regex: grail movement
+    - regex: holy spirit of blood and water church
+    - regex: lalpa kohhran thar
+    - regex: lalpa kohran thar
+    - regex: ngabe
+    - regex: mama tada
+    - regex: mentuhui
+    - regex: modekngei
+    - regex: noahidism
+    - regex: pai mārire
+    - regex: pai marire
+    - regex: pilgrims of arès
+    - regex: pilgrims of ares
+    - regex: rātana
+    - regex: ringatū
+    - regex: ringatu
+    - regex: the family international
+    - regex: world elijah evangelical mission
+    - regex: zhushenjiaobaguadao
+    - regex: de teaching
+    - regex: dejiao
+    - regex: huangjidao
+    - regex: huangtiandao
+    - regex: huazhaidao
+    - regex: jiugongdao
+    - regex: way of the gods according to the confucian tradition
+    - regex: luandao
+    - regex: luoism
+    - regex: chinese religions of fasting
+    - regex: xiantiandao
+    - regex: guiyidao
+    - regex: shengdao
+    - regex: yaochidao
+    - regex: yiguandao
+    - regex: haizidao
+    - regex: dragon flower church of the heart-bound heavenly way
+    - regex: yixin tiandao
+    - regex: dacheng teaching of mount jizu
+    - regex: dacheng
+    - regex: church of the highest supreme
+    - regex: hongyangism
+    - regex: maitreya teachings
+    - regex: maitreyanism
+    - regex: sanyiism
+    - regex: shanrendao
+    - regex: taigu school
+    - regex: tiandihui
+    - regex: tiandiism
+    - regex: tianguangdao
+    - regex: tianxian miaodao
+    - regex: tianxian miaodao
+    - regex: weixinism
+    - regex: white lotus
+    - regex: xuanyuan teaching
+    - regex: xuanyuandao
+    - regex: yellow sand society
+    - regex: zailiism
+    - regex: zhongyongdaoneo-vedantaadidam
+    - regex: adi dharm
+    - regex: brahmoism
+    - regex: brahmo samaj
+    - regex: sadharan brahmo samaj
+    - regex: ananda movement
+    - regex: ananda
+    - regex: swami paramananda
+    - regex: ananda ashrama
+    - regex: ananda marga
+    - regex: arya samaj
+    - regex: ayyavazhi
+    - regex: chinmaya mission
+    - regex: international society for krishna consciousness
+    - regex: hare krishna
+    - regex: mahanam sampraday
+    - regex: mahima dharma
+    - regex: matua mahasangha
+    - regex: kalki bhagawan
+    - regex: oneness movement
+    - regex: rajneesh movement
+    - regex: satsang \(deoghar\)
+    - regex: satsang
+    - regex: shirdi sai baba movement
+    - regex: sivananda yoga vedanta centres
+    - regex: sri aurobindo ashram
+    - regex: sri ramana ashram
+    - regex: neo-advaita
+    - regex: swaminarayan sampradaya
+    - regex: bochasanwasi akshar purushottam swaminarayan sanstha
+    - regex: laxmi narayan dev gadi
+    - regex: international swaminarayan satsang mandal
+    - regex: swaminarayan gurukul
+    - regex: nar narayan dev gadi
+    - regex: international swaminarayan satsang organisation
+    - regex: narnarayan dev yuvak mandal
+    - regex: swaminarayan_sampradaya
+    - regex: swaminarayan gadi \(maninagar\)
+    - regex: swaminarayan mandir vasna sanstha
+    - regex: transcendental meditationcheondoism
+    - regex: jeungsanism
+    - regex: daesun jinrihoe
+    - regex: jeung san do
+    - regex: bocheonism
+    - regex: suwunism
+    - regex: daejongismđạo bửu sơn kỳ hương
+    - regex: hòa hảo
+    - regex: tứ ân hiếu nghĩa
+    - regex: diamond way buddhism
+    - regex: falun gong
+    - regex: guanyin famen
+    - regex: humanistic buddhism
+    - regex: navayana
+    - regex: new kadampa tradition
+    - regex: nipponzan-myōhōji-daisanga
+    - regex: pl kyodan
+    - regex: reiyūkai
+    - regex: risshō kōsei kai
+    - regex: rimé movement
+    - regex: shambhala buddhism
+    - regex: shinnyo-en
+    - regex: soka gakkai
+    - regex: triratna buddhist community
+    - regex: true buddha school
+    - regex: won buddhismshree shree anandamayee sangha
+    - regex: anandamayee sangha
+    - regex: bell church
+    - regex: bell religion
+    - regex: brahma kumaris
+    - regex: caodaism
+    - regex: đạo dừa
+    - regex: meivazhi
+    - regex: omnism
+    - regex: open-source religion
+    - regex: satya dharma
+    - regex: sathya sai baba movement
+    - regex: share international
+    - regex: subudaum shinrikyo
+    - regex: aum shinrikyo
+    - regex: aleph
+    - regex: hikari no wa
+    - regex: happy science
+    - regex: ryukyuan religion
+    - regex: ijun
+    - regex: konkokyo
+    - regex: kurozumikyō
+    - regex: oomoto
+    - regex: church of world messianity
+    - regex: mahikari
+    - regex: seicho-no-ie
+    - regex: shōroku shintō yamatoyama
+    - regex: shinji shumeikai
+    - regex: shumei
+    - regex: sekai shindokyo
+    - regex: shinmeiaishinkai
+    - regex: tenrikyo
+    - regex: tenshō kōtai jingūkyō
+    - regex: zenrinkyocontemporary sant mat movements
+    - regex: advait mat
+    - regex: radha soami
+    - regex: radha soami satsang beas
+    - regex: radha soami satsang sabha
+    - regex: radha soami satsang dayagbal
+    - regex: radha swami satsang, dinod
+    - regex: kirpal singh
+    - regex: ruhani satsang
+    - regex: manavta mandir
+    - regex: science of spirituality
+    - regex: radha soami
+    - regex: ancient teachings of the masters
+    - regex: dera sacha sauda
+    - regex: eckankar
+    - regex: elan vital \(organization\)
+    - regex: elan vital
+    - regex: movement of spiritual inner awareness
+    - regex: ravidassia
+    - regex: polytheistic reconstructionismarmenian neopaganism
+    - regex: hetanism
+    - regex: baltic neopaganism
+    - regex: dievturība
+    - regex: romuva \(religion\)
+    - regex: romuva
+    - regex: caucasian neopaganism
+    - regex: abkhaz neopaganism
+    - regex: assianism
+    - regex: celtic neopaganism
+    - regex: celtic reconstructionist paganism
+    - regex: celtic reconstructionist paganism
+    - regex: druidry \(modern\)
+    - regex: druidry
+    - regex: heathenry \(new religious movement\)
+    - regex: heathenry
+    - regex: hellenism \(religion\)
+    - regex: hellenism
+    - regex: heraka
+    - regex: italo-roman neopaganism
+    - regex: nova roma
+    - regex: roman traditional movement
+    - regex: kemetism
+    - regex: kemetic orthodoxy
+    - regex: semitic neopaganism
+    - regex: slavic native faith
+    - regex: rodnovery
+    - regex: native polish church
+    - regex: peterburgian vedism
+    - regex: rodzima wiara
+    - regex: rodnover confederation
+    - regex: runvira
+    - regex: sylenkoism
+    - regex: union of slavic native belief communities
+    - regex: ynglism
+    - regex: uralic neopaganism
+    - regex: estonian neopaganism
+    - regex: finnish neopaganism
+    - regex: suomenusko
+    - regex: hungarian neopaganism
+    - regex: mordvin native religion
+    - regex: mastorava
+    - regex: udmurt vos
+    - regex: zalmoxianism
+    - regex: zuism
+    - regex: adonism
+    - regex: christianity and neopaganism
+    - regex: christopaganism
+    - regex: christianity and neopaganism
+    - regex: christian wicca
+    - regex: church of all worlds
+    - regex: church of aphrodite
+    - regex: cochrane's craft
+    - regex: maría lionza
+    - regex: maria lionza
+    - regex: druidry \(modern\)
+    - regex: druidry
+    - regex: ár ndraíocht féin
+    - regex: order of bards, ovates, and druids
+    - regex: reformed druids of north america
+    - regex: el tío
+    - regex: el tio
+    - regex: feraferia
+    - regex: goddess movement
+    - regex: huna \(new age\)
+    - regex: huna
+    - regex: ivanovism
+    - regex: mru people
+    - regex: krama
+    - regex: neoshamanism
+    - regex: pow-wow \(folk magic\)
+    - regex: pow-wow
+    - regex: radical faeries
+    - regex: ringing cedars' anastasianism
+    - regex: santa muerte
+    - regex: stregheria
+    - regex: summum
+    - regex: technopaganism
+    - regex: wicca
+    - regex: british traditional wicca
+    - regex: gardnerian wicca
+    - regex: alexandrian wicca
+    - regex: central valley wicca
+    - regex: algard wicca
+    - regex: chthonioi alexandrian wicca
+    - regex: blue star wicca
+    - regex: seax-wica
+    - regex: universal eclectic wicca
+    - regex: celtic wicca
+    - regex: dianic wicca
+    - regex: faery wicca
+    - regex: feri tradition
+    - regex: georgian wicca
+    - regex: odyssean wicca
+    - regex: wiccan church
+    - regex: covenant of the goddesschurch of the universe
+    - regex: neo-american church
+    - regex: santo daime
+    - regex: temple of the true inner light
+    - regex: carlos castaneda
+    - regex: tensegrity
+    - regex: thc ministry
+    - regex: união do vegetal
+    - regex: association for research and enlightenment
+    - regex: chaos magic
+    - regex: chaos magic
+    - regex: conversations with god
+    - regex: eckankar
+    - regex: love has won
+    - regex: rainbow family
+    - regex: the family \(australian new age group\)
+    - regex: the family
+    - regex: christian science
+    - regex: church of divine science
+    - regex: church of the truth
+    - regex: church universal and triumphant
+    - regex: home of truth
+    - regex: jewish science
+    - regex: psychiana
+    - regex: religious science
+    - regex: seicho-no-ie
+    - regex: the infinite way
+    - regex: unity church
+    - regex: universal foundation for better living
+    - regex: church of euthanasia
+    - regex: church of the flying spaghetti monster
+    - regex: church of the subgenius
+    - regex: dinkoism
+    - regex: discordianism
+    - regex: dudeism
+    - regex: earthseed
+    - regex: terasem movement
+    - regex: terasem
+    - regex: iglesia maradoniana
+    - regex: jediism
+    - regex: kibology
+    - regex: kopimism
+    - regex: landover baptist church
+    - regex: omphalos hypothesis
+    - regex: last thursdayism
+    - regex: the elder scrolls
+    - regex: the nine divines
+    - regex: 'pataphysics
+    - regex: sisters of perpetual indulgence
+    - regex: united church of bacon
+    - regex: post-theismabrahamites
+    - regex: russian cosmism
+    - regex: cosmism
+    - regex: cult of reason
+    - regex: cult of the supreme being
+    - regex: deism
+    - regex: christian deism
+    - regex: ethical movement
+    - regex: freethought
+    - regex: north texas church of freethought
+    - regex: god-building
+    - regex: renaissance humanism
+    - regex: humanism
+    - regex: ietsism
+    - regex: moorish orthodox church of america
+    - regex: pandeism
+    - regex: pantheism
+    - regex: naturalistic pantheism
+    - regex: religion of humanity
+    - regex: church of humanity
+    - regex: saint-simonianism
+    - regex: syntheism
+    - regex: theophilanthropy
+    - regex: unitarian universalism
+    - regex: universal life churchaetherius society
+    - regex: ashtar galactic command
+    - regex: chen tao \("true way"\)
+    - regex: fiat lux \(ufo religion\)
+    - regex: fiat lux
+    - regex: ground crew project
+    - regex: heaven's gate \(religious group\)
+    - regex: heaven's gate
+    - regex: industrial church of the new world comforter
+    - regex: mark-age
+    - regex: nuwaubian nation
+    - regex: order of the solar temple
+    - regex: raëlism
+    - regex: scientology
+    - regex: free zone \(scientology\)
+    - regex: independent scientology
+    - regex: the seekers \(rapturists\)
+    - regex: the seekers
+    - regex: unarius academy of science
+    - regex: universe people
+    - regex: the urantia book
+    - regex: urantia movementceremonial magic
+    - regex: left-hand path and right-hand pathanthroposophy
+    - regex: archeosophical society
+    - regex: builders of the adytum
+    - regex: fourth way
+    - regex: fraternity of the inner light
+    - regex: hermeticism
+    - regex: hermetic order of the golden dawn
+    - regex: the hermetic order of the golden dawn, inc.
+    - regex: illuminates of thanateros
+    - regex: luciferianism
+    - regex: fraternitas saturni
+    - regex: neo-luciferian church
+    - regex: new acropolis
+    - regex: occultism
+    - regex: gaianism
+    - regex: mayanism
+    - regex: the michael teachings
+    - regex: michael teachings
+    - regex: ordo aurum solis
+    - regex: otherkin
+    - regex: rosicrucian
+    - regex: ancient mystical order rosae crucis
+    - regex: lectorium rosicrucianum
+    - regex: rosicrucian fellowship
+    - regex: satanism
+    - regex: satanism
+    - regex: non-theistic satanism
+    - regex: laveyan satanism
+    - regex: church of satan
+    - regex: first satanic church
+    - regex: the satanic temple
+    - regex: theistic satanism
+    - regex: joy of satan ministries
+    - regex: joy of satan
+    - regex: order of nine angles
+    - regex: our lady of endor coven
+    - regex: temple of the black light
+    - regex: temple of set
+    - regex: spiritualism
+    - regex: oahspe
+    - regex: faithism
+    - regex: thelema
+    - regex: a∴a∴
+    - regex: ordo templi orientis
+    - regex: typhonian order
+    - regex: theosophy
+    - regex: neo-theosophy
+    - regex: agni yoga
+    - regex: angi yoga
+    - regex: roerichism
+    - regex: thee temple ov psychick youth
+    - regex: religion and ritual of the cucuteni–trypillia culture
+    - regex: cucuteni–trypillia religion
+    - regex: funnelbeaker culture
+    - regex: funnelbeaker religion
+    - regex: hemudu culture
+    - regex: hemudu religion
+    - regex: hongshan culture
+    - regex: hongshan religion
+    - regex: linear pottery culture
+    - regex: linear pottery religion
+    - regex: paleolithic religion
+    - regex: urreligion
+    - regex: urmonotheismus
+    - regex: varna culture
+    - regex: varna religionancient egyptian religion
+    - regex: atenism
+    - regex: ancient mesopotamian religion
+    - regex: assyria
+    - regex: ancient assyrian religion
+    - regex: babylonian religion
+    - regex: sabians
+    - regex: sabian religion
+    - regex: shamsīyah
+    - regex: shamsiyah
+    - regex: sumerian religion
+    - regex: ancient semitic religion
+    - regex: ancient canaanite religion
+    - regex: yahwism
+    - regex: religion of the indus valley civilization
+    - regex: harappan religion
+    - regex: hattians
+    - regex: hattian religion
+    - regex: hittite mythology and religion
+    - regex: hittite religion
+    - regex: hurrian religion
+    - regex: liangzhu culture
+    - regex: liangzhu religion
+    - regex: longshan culture
+    - regex: longshan religion
+    - regex: luwian religion
+    - regex: minoan religion
+    - regex: mycenaean religion
+    - regex: nordic bronze age
+    - regex: nordic bronze age religion
+    - regex: proto-indo-european mythology
+    - regex: proto-indo-european religion
+    - regex: paleo-balkan mythology
+    - regex: paleo-balkan religion
+    - regex: proto-indo-iranian religion
+    - regex: mahabad \(prophet\)
+    - regex: mahabadism
+    - regex: proto-uralic religion
+    - regex: shang dynasty
+    - regex: shang religion
+    - regex: urnfield culture
+    - regex: urnfield religionadena culture
+    - regex: adena religion
+    - regex: kingdom_of_aksum
+    - regex: aksumite religion
+    - regex: albanian mythology
+    - regex: albanian folk beliefs
+    - regex: proto-celtic paganism
+    - regex: ancient celtic religion
+    - regex: breton mythology
+    - regex: breton paganism
+    - regex: cantabrian mythology
+    - regex: cantabrian paganism
+    - regex: celtic animism
+    - regex: cornish mythology
+    - regex: cornish paganism
+    - regex: irish mythology
+    - regex: irish paganism
+    - regex: isle of man
+    - regex: manx paganism
+    - regex: scottish mythology
+    - regex: scottish paganism
+    - regex: hebridean mythology and folklore
+    - regex: hebridean paganism
+    - regex: welsh mythology
+    - regex: welsh paganism
+    - regex: ancient greek religion
+    - regex: greco-buddhism
+    - regex: greco-roman mysteries
+    - regex: jupiter dolichenus
+    - regex: cult of jupiter dolichenus
+    - regex: samothrace temple complex
+    - regex: cult of the great gods
+    - regex: cybele
+    - regex: cybele's cult
+    - regex: dionysian mysteries
+    - regex: dionysian mysteries
+    - regex: orphism \(religion\)
+    - regex: orphism
+    - regex: eleusinian mysteries
+    - regex: eleusinian mysteries
+    - regex: mysteries of isis
+    - regex: hellenistic religion
+    - regex: hermeticism
+    - regex: neoplatonism
+    - regex: pythagoreanism
+    - regex: neopythagoreanism
+    - regex: stoicism
+    - regex: ancient iranian religion
+    - regex: armenian mythology
+    - regex: armenian paganism
+    - regex: basque mythology
+    - regex: basque paganism
+    - regex: cantabrian mythology
+    - regex: cantabrian religion
+    - regex: castro culture
+    - regex: castro religion
+    - regex: dacians
+    - regex: dacian religion
+    - regex: ebla
+    - regex: eblaite religion
+    - regex: elam
+    - regex: elamite religion
+    - regex: etruscan religion
+    - regex: gallaeci
+    - regex: gallaecian religion
+    - regex: georgian mythology
+    - regex: georgian paganism
+    - regex: germanic paganism
+    - regex: pre-christian alpine traditions
+    - regex: alpine paganism
+    - regex: anglo-saxon paganism
+    - regex: cimbri
+    - regex: cimbri religion
+    - regex: continental germanic mythology
+    - regex: continental germanic paganism
+    - regex: frankish mythology
+    - regex: frankish paganism
+    - regex: gothic paganism
+    - regex: old norse religion
+    - regex: armazi \(god\)
+    - regex: iberian religion
+    - regex: illyrian religion
+    - regex: iapydes
+    - regex: iapydes religion
+    - regex: ligures
+    - regex: ligurian religion
+    - regex: lusitanian mythology
+    - regex: lusitanian religion
+    - regex: lydians
+    - regex: lydian religion
+    - regex: nuragic civilization
+    - regex: nuragic religion
+    - regex: paeonians
+    - regex: paeonian religion
+    - regex: phrygians
+    - regex: phrygian religion
+    - regex: punic religion
+    - regex: religion in ancient rome
+    - regex: gallo-roman religion
+    - regex: imperial cult of ancient rome
+    - regex: imperial cult
+    - regex: greco-roman mysteries
+    - regex: mithraism
+    - regex: religion in pre-islamic arabia
+    - regex: nabataean religion
+    - regex: sabaeans
+    - regex: south arabian paganism
+    - regex: samnite religion
+    - regex: scythian religion
+    - regex: śramaṇa
+    - regex: sramana
+    - regex: thracian religion
+    - regex: umbri
+    - regex: umbrian religion
+    - regex: marsi
+    - regex: marsi religion
+    - regex: urartu
+    - regex: urartu religion
+    - regex: historical vedic religion
+    - regex: vedicism
+    - regex: arioi
+    - regex: balinese mythology
+    - regex: balinese religion
+    - regex: baltic mythology
+    - regex: baltic paganism
+    - regex: prussian mythology
+    - regex: prussian paganism
+    - regex: latvian mythology
+    - regex: latvian paganism
+    - regex: lithuanian mythology
+    - regex: lithuanian paganism
+    - regex: batak
+    - regex: batak religion
+    - regex: bulgars
+    - regex: bulgar religion
+    - regex: pagan religions of azerbaijan
+    - regex: caucasian albanian paganism
+    - regex: chimor
+    - regex: chimor religion
+    - regex: estonian mythology
+    - regex: estonian shamanism
+    - regex: finnish paganism
+    - regex: finnish shamanism
+    - regex: guanches
+    - regex: guanche religion
+    - regex: shamanistic remnants in hungarian folklore
+    - regex: hungarian shamanism
+    - regex: khitan people
+    - regex: khitan religion
+    - regex: jamaican maroon religion
+    - regex: lima culture
+    - regex: lima religion
+    - regex: moche culture
+    - regex: moche religion
+    - regex: sámi shamanism
+    - regex: slavic paganism
+    - regex: tiwanaku empire
+    - regex: tiwanaku religion
+    - regex: tocharians
+    - regex: tocharian religion
+    - regex: vainakh religion
+    - regex: wari culture
+    - regex: religion in asia
+    - regex: religion in oceania
+    - regex: religion in europe
+    - regex: religion in north america
+    - regex: religion in south america
+    - regex: religion by country
+    - regex: list of state-established religions
+    - regex: buddhism by country
+    - regex: buddhism in the united states
+    - regex: christianity by country
+    - regex: roman catholicism by country
+    - regex: eastern orthodoxy by country
+    - regex: protestantism by country
+    - regex: oriental orthodoxy by country
+    - regex: hinduism by country
+    - regex: islam by country
+    - regex: ahmadiyya by country
+    - regex: judaism by country
+    - regex: sikhism by country
+    - regex: alchemy
+    - regex: ceremonial magic
+    - regex: chaos magic
+    - regex: civil religion
+    - regex: enochian magic
+    - regex: goetia
+    - regex: juche
+    - regex: list of catholic rites and churches
+    - regex: list of mythologies
+    - regex: list of pantheons
+    - regex: lists of people by belief
+    - regex: list of religious organizations
+    - regex: magic \(supernatural\)
+    - regex: magic
+    - regex: mythology
+    - regex: religious fundamentalism
+    - regex: witchcraft \(contemporary\)
+    - regex: witchcraft
